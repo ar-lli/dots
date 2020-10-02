@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PRINT="Install pack:
+pacman \e[1;32m -S \e[0m package_name
+
+Remove pack leaving all dep:
+pacman \e[1;31m -R \e[0m package_name
+
+Remove pack & all dep not required:
+pacman \e[1;31m -Rs \e[0m package_name
+
+Remove pack & config
+pacman \e[1;31m -Rn \e[0m package_name
+
+Upgrade all pack
+pacman \e[1;34m -Syu \e[0m
+
+How to know if a package is installed
+pacman \e[1;34m -Qs \e[0m <packagename>"
+
+echo -e "$PRINT"

@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import os
+import re
+
+"""
+Set List variable to store
+the list of all sink
+"""
+myCmd = 'pacmd list-sinks | grep -e index:'
+List = os.popen(myCmd).read()
+
+"""
+Setting regex, search pattern
+and inizialize Sink 
+"""
+regex = '.*\*.*([0-9]+).*'
+Sink = re.search(regex, List).group(1)
+
+os.system('pactl set-sink-volume ' + Sink + ' -5%')
+
+
+
+
+
+
+
