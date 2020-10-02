@@ -1,0 +1,36 @@
+2020/10/01-14:01:30.920 1e39 Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/10/01-14:01:30.920 1e39 Recovering log #117
+2020/10/01-14:01:30.935 1e39 Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/000117.log 
+2020/10/01-14:45:00.671 621a Level-0 table #123: started
+2020/10/01-14:45:00.696 621a Level-0 table #123: 1358044 bytes OK
+2020/10/01-14:45:00.699 621a Delete type=0 #117
+2020/10/01-14:53:55.525 621a Compacting 1@1 + 2@2 files
+2020/10/01-14:53:55.586 621a Generated table #124@1: 8179 keys, 2170110 bytes
+2020/10/01-14:53:55.597 621a Generated table #125@1: 4612 keys, 448510 bytes
+2020/10/01-14:53:55.597 621a Compacted 1@1 + 2@2 files => 2618620 bytes
+2020/10/01-14:53:55.599 621a compacted to: files[ 0 0 2 0 0 0 0 ]
+2020/10/01-14:53:55.600 621a Delete type=2 #120
+2020/10/01-14:53:55.600 621a Delete type=2 #119
+2020/10/01-14:53:55.600 621a Delete type=2 #123
+2020/10/01-15:54:28.918 621a Level-0 table #127: started
+2020/10/01-15:54:28.938 621a Level-0 table #127: 1058301 bytes OK
+2020/10/01-15:54:28.941 621a Delete type=0 #122
+2020/10/01-15:54:37.127 621a Compacting 1@1 + 1@2 files
+2020/10/01-15:54:37.191 621a Generated table #128@1: 8394 keys, 2169864 bytes
+2020/10/01-15:54:37.194 621a Generated table #129@1: 70 keys, 33922 bytes
+2020/10/01-15:54:37.194 621a Compacted 1@1 + 1@2 files => 2203786 bytes
+2020/10/01-15:54:37.197 621a compacted to: files[ 0 0 3 0 0 0 0 ]
+2020/10/01-15:54:37.197 621a Delete type=2 #127
+2020/10/01-15:54:37.197 621a Delete type=2 #124
+2020/10/01-17:56:58.743 621a Level-0 table #131: started
+2020/10/01-17:56:58.759 621a Level-0 table #131: 1242317 bytes OK
+2020/10/01-17:56:58.763 621a Delete type=0 #126
+2020/10/01-17:57:03.175 621a Compacting 1@1 + 3@2 files
+2020/10/01-17:57:03.208 621a Generated table #132@1: 8386 keys, 2168251 bytes
+2020/10/01-17:57:03.220 621a Generated table #133@1: 5482 keys, 622590 bytes
+2020/10/01-17:57:03.220 621a Compacted 1@1 + 3@2 files => 2790841 bytes
+2020/10/01-17:57:03.223 621a compacted to: files[ 0 0 2 0 0 0 0 ]
+2020/10/01-17:57:03.223 621a Delete type=2 #131
+2020/10/01-17:57:03.223 621a Delete type=2 #125
+2020/10/01-17:57:03.223 621a Delete type=2 #129
+2020/10/01-17:57:03.223 621a Delete type=2 #128

@@ -1,0 +1,36 @@
+2020/10/01-13:58:33.761 8ed Reusing MANIFEST /home/arianna/.config/chromium/Default/Local Extension Settings/gbgkoodppmcmfeaegpelbngiahdcccig/MANIFEST-000001
+2020/10/01-13:58:33.761 8ed Recovering log #239
+2020/10/01-13:58:33.761 8ed Reusing old log /home/arianna/.config/chromium/Default/Local Extension Settings/gbgkoodppmcmfeaegpelbngiahdcccig/000239.log 
+2020/10/01-13:59:35.772 1190 Level-0 table #243: started
+2020/10/01-13:59:35.804 1190 Level-0 table #243: 2339327 bytes OK
+2020/10/01-13:59:35.808 1190 Delete type=0 #239
+2020/10/01-14:01:32.958 1190 Compacting 1@0 + 1@1 files
+2020/10/01-14:01:32.974 1190 Generated table #244@0: 4 keys, 778796 bytes
+2020/10/01-14:01:32.974 1190 Compacted 1@0 + 1@1 files => 778796 bytes
+2020/10/01-14:01:32.977 1190 compacted to: files[ 0 1 1 0 0 0 0 ]
+2020/10/01-14:01:32.978 1190 Delete type=2 #243
+2020/10/01-14:01:32.978 1190 Delete type=2 #240
+2020/10/01-14:01:35.726 1190 Compacting 1@1 + 1@2 files
+2020/10/01-14:01:35.737 1190 Generated table #245@1: 9 keys, 778992 bytes
+2020/10/01-14:01:35.737 1190 Compacted 1@1 + 1@2 files => 778992 bytes
+2020/10/01-14:01:35.741 1190 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/10/01-15:13:33.861 1190 Level-0 table #247: started
+2020/10/01-15:13:33.885 1190 Level-0 table #247: 2338287 bytes OK
+2020/10/01-15:13:33.889 1190 Delete type=2 #238
+2020/10/01-15:13:33.889 1190 Delete type=2 #244
+2020/10/01-15:13:33.889 1190 Delete type=0 #242
+2020/10/01-16:02:20.624 1190 Compacting 1@1 + 1@2 files
+2020/10/01-16:02:20.651 1190 Generated table #248@1: 9 keys, 778995 bytes
+2020/10/01-16:02:20.651 1190 Compacted 1@1 + 1@2 files => 778995 bytes
+2020/10/01-16:02:20.654 1190 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/10/01-16:02:20.655 1190 Delete type=2 #245
+2020/10/01-16:02:20.655 1190 Delete type=2 #247
+2020/10/01-16:59:33.992 1190 Level-0 table #250: started
+2020/10/01-16:59:34.052 1190 Level-0 table #250: 2347693 bytes OK
+2020/10/01-16:59:34.070 1190 Delete type=0 #246
+2020/10/01-17:54:02.771 1190 Compacting 1@1 + 1@2 files
+2020/10/01-17:54:02.787 1190 Generated table #251@1: 9 keys, 778995 bytes
+2020/10/01-17:54:02.787 1190 Compacted 1@1 + 1@2 files => 778995 bytes
+2020/10/01-17:54:02.789 1190 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/10/01-17:54:02.790 1190 Delete type=2 #248
+2020/10/01-17:54:02.790 1190 Delete type=2 #250

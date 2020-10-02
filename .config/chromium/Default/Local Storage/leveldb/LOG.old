@@ -1,0 +1,21 @@
+2020/10/01-11:11:33.085 1ced1 Reusing MANIFEST /home/arianna/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2020/10/01-11:11:33.086 1ced1 Recovering log #339
+2020/10/01-11:11:33.086 1ced1 Reusing old log /home/arianna/.config/chromium/Default/Local Storage/leveldb/000339.log 
+2020/10/01-11:13:00.516 1db4e Level-0 table #343: started
+2020/10/01-11:13:00.535 1db4e Level-0 table #343: 48291 bytes OK
+2020/10/01-11:13:00.540 1db4e Delete type=0 #339
+2020/10/01-11:54:00.516 1db4e Level-0 table #345: started
+2020/10/01-11:54:00.522 1db4e Level-0 table #345: 65485 bytes OK
+2020/10/01-11:54:00.525 1db4e Delete type=0 #342
+2020/10/01-11:54:00.525 1db4e Compacting 4@0 + 1@1 files
+2020/10/01-11:54:00.580 1db4e Generated table #346@0: 1196 keys, 1581315 bytes
+2020/10/01-11:54:00.580 1db4e Compacted 4@0 + 1@1 files => 1581315 bytes
+2020/10/01-11:54:00.586 1db4e compacted to: files[ 0 1 1 0 0 0 0 ]
+2020/10/01-11:54:00.587 1db4e Delete type=2 #340
+2020/10/01-11:54:00.587 1db4e Delete type=2 #343
+2020/10/01-11:54:00.587 1db4e Delete type=2 #345
+2020/10/01-11:54:00.587 1db4e Delete type=2 #338
+2020/10/01-11:54:00.587 1db4e Delete type=2 #336
+2020/10/01-12:33:07.506 1db4e Level-0 table #348: started
+2020/10/01-12:33:07.517 1db4e Level-0 table #348: 43689 bytes OK
+2020/10/01-12:33:07.526 1db4e Delete type=0 #344

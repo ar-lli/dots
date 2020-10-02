@@ -1,0 +1,8 @@
+2020/08/17-15:25:40.590 273f Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_www.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/17-15:25:40.590 273f Recovering log #4
+2020/08/17-15:25:40.590 273f Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_www.microsoft.com_0.indexeddb.leveldb/000004.log 
+2020/08/17-15:28:33.084 406a Level-0 table #8: started
+2020/08/17-15:28:33.084 406a Level-0 table #8: 0 bytes OK
+2020/08/17-15:28:33.089 406a Delete type=0 #4
+2020/08/17-15:28:33.089 406a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/17-15:28:33.089 406a Manual compaction at level-1 from (begin) .. (end); will stop at (end)

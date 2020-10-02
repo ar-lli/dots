@@ -1,0 +1,8 @@
+2020/08/14-13:11:56.848 c2e3 Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_tpc.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/14-13:11:56.849 c2e3 Recovering log #4
+2020/08/14-13:11:56.849 c2e3 Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_tpc.googlesyndication.com_0.indexeddb.leveldb/000004.log 
+2020/08/14-13:11:59.772 c376 Level-0 table #8: started
+2020/08/14-13:11:59.772 c376 Level-0 table #8: 0 bytes OK
+2020/08/14-13:11:59.776 c376 Delete type=0 #4
+2020/08/14-13:11:59.776 c376 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/14-13:11:59.776 c376 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

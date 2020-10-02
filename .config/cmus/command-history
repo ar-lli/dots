@@ -1,0 +1,28 @@
+add /home/arianna/Music/Some Songs/
+update-cache 
+add /home/arianna/Music/some songs/
+add /home/arianna/Music/Young Signorino/
+add /home/arianna/Music/TREDICI PIETRO/
+pl-create new
+pl-create
+player-pause
+add /home/arianna/Music/Fabri Fibra/
+add /home/arianna/Music/Ernia/
+update-cache -f
+add /home/arianna/Music/Marracash/Status/
+add /home/arianna/Music/Marracash/Marracash (Gold Edition)/
+add /home/arianna/Music/64bars/
+add /home/arianna/Music/Basement Cafè Next Gen/
+add /home/arianna/Music/Machete/
+add Music/
+clear 
+add /home/arianna/Music/
+add 
+add
+colorscheme dracula
+colorscheme Dracula
+set output_plugin=pulse
+set output_plugin=ao
+set dsp.jack.server_name=
+set dsp.alsa.device=default
+q

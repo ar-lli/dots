@@ -1,0 +1,15 @@
+2020/08/16-15:20:31.692 39b3 Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/16-15:20:31.692 39b3 Recovering log #7
+2020/08/16-15:20:31.693 39b3 Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000007.log 
+2020/08/16-15:32:55.911 509d Level-0 table #11: started
+2020/08/16-15:32:55.941 509d Level-0 table #11: 333636 bytes OK
+2020/08/16-15:32:55.958 509d Delete type=0 #7
+2020/08/16-15:32:55.958 509d Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/16-15:32:55.958 509d Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x08\x01\x02\x01\x1c\x00S\x00t\x00o\x00r\x00e\x00d\x00C\x00a\x00c\x00h\x00e\x00S\x00t\x00a\x00t\x00e\x00:\x00:\x00/\x00m\x00a\x00i\x00l\x00/\x00u\x00/\x000\x00/' @ 113 : 1
+2020/08/16-15:32:55.958 509d Compacting 1@1 + 1@2 files
+2020/08/16-15:32:55.962 509d Generated table #12@1: 70 keys, 54874 bytes
+2020/08/16-15:32:55.962 509d Compacted 1@1 + 1@2 files => 54874 bytes
+2020/08/16-15:32:55.965 509d compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/16-15:32:55.966 509d Delete type=2 #11
+2020/08/16-15:32:55.966 509d Delete type=2 #5
+2020/08/16-15:32:55.966 509d Manual compaction at level-1 from '\x00\x08\x01\x02\x01\x1c\x00S\x00t\x00o\x00r\x00e\x00d\x00C\x00a\x00c\x00h\x00e\x00S\x00t\x00a\x00t\x00e\x00:\x00:\x00/\x00m\x00a\x00i\x00l\x00/\x00u\x00/\x000\x00/' @ 113 : 1 .. (end); will stop at (end)

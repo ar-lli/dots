@@ -1,0 +1,26 @@
+conky.config = {
+    alignment = 'top_left',
+    background = true,
+    default_color = 'b8a99e',
+    double_buffer = true,
+    draw_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    font = 'RobotoMono Nerd Font:style=Regular:size=10',
+    gap_x = 8,
+    gap_y = -2,
+    maximum_width = 850,
+    no_buffers = true,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = 'override',
+    text_buffer_size = 2048,
+    total_run_times = 0,
+    update_interval = 1,
+    use_xft = true,
+}
+
+conky.text = [[
+${cmus_title} ~ ${cmus_artist}
+]]
+

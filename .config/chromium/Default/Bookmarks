@@ -1,0 +1,124 @@
+{
+   "checksum": "e37aa34fe08ad770bfc0fb50ad168722",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13241888420114303",
+            "guid": "cee2a3c7-e3ab-4496-bc09-19bc62917691",
+            "id": "149",
+            "name": "Google",
+            "type": "url",
+            "url": "https://www.google.it/"
+         }, {
+            "date_added": "13085908803780925",
+            "guid": "be9a589d-0c60-40e7-9414-d57abba45a0f",
+            "id": "5",
+            "meta_info": {
+               "last_visited": "13172605850480972",
+               "last_visited_desktop": "13195306787820998"
+            },
+            "name": "Outlook",
+            "type": "url",
+            "url": "https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1441435198&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx&lc=1040&id=64855&mkt=it-it&cbcxt=mai"
+         }, {
+            "date_added": "13085909771114182",
+            "guid": "cc7477e6-5be6-4a7a-bd22-32b0c8cc0a3a",
+            "id": "7",
+            "meta_info": {
+               "last_visited_desktop": "13181688714074366"
+            },
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/?hl=it&gl=IT"
+         }, {
+            "date_added": "13099865312674538",
+            "guid": "74561b47-1a70-464b-80b2-10528f06600d",
+            "id": "6",
+            "meta_info": {
+               "last_visited": "13164500778928173",
+               "last_visited_desktop": "13182367927764584"
+            },
+            "name": "WordReference.com",
+            "type": "url",
+            "url": "http://www.wordreference.com/it/"
+         }, {
+            "date_added": "13144803853333674",
+            "guid": "9e99f769-725f-47a8-91cf-7245bd261343",
+            "id": "9",
+            "meta_info": {
+               "last_visited_desktop": "13166893519925009"
+            },
+            "name": "Amazon",
+            "type": "url",
+            "url": "https://www.amazon.it/"
+         }, {
+            "date_added": "13164559333821022",
+            "guid": "98b5817a-b1de-427a-a97e-31570616c0a9",
+            "id": "10",
+            "meta_info": {
+               "last_visited_desktop": "13174926186936269"
+            },
+            "name": "Wolfram|Alpha: Computational Knowledge Engine",
+            "type": "url",
+            "url": "http://www.wolframalpha.com/"
+         }, {
+            "date_added": "13161711273630867",
+            "guid": "3e451747-6a00-40c7-92fa-7a11c5b7aad6",
+            "id": "11",
+            "meta_info": {
+               "last_visited_desktop": "13178386682090840"
+            },
+            "name": "Mathematics Stack Exchange",
+            "type": "url",
+            "url": "https://math.stackexchange.com/"
+         }, {
+            "date_added": "13241888482095912",
+            "guid": "96d25cb7-0635-4bc3-9ebf-c65bd16b2cd3",
+            "id": "150",
+            "name": "e-learning - Dipartimento di Matematica",
+            "type": "url",
+            "url": "https://elearning.dm.unipi.it/"
+         }, {
+            "date_added": "13241978739130544",
+            "guid": "018b83d0-5b4f-4ea0-a312-f5b5e01a60fa",
+            "id": "152",
+            "name": "Unblockit - Access your favourite blocked sites",
+            "type": "url",
+            "url": "https://unblocked-pw.github.io/"
+         }, {
+            "date_added": "13245412551876776",
+            "guid": "6af6752b-bea1-4407-a031-1b169d6dbcb9",
+            "id": "154",
+            "name": "Informazioni generali [DidaWiki]",
+            "type": "url",
+            "url": "http://didawiki.di.unipi.it/doku.php/matematica/ro/start"
+         } ],
+         "date_added": "13241805073011435",
+         "date_modified": "13245412551876776",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13241805073011442",
+         "date_modified": "13241888420114303",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13241805073011444",
+         "date_modified": "13174490791102535",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CscBCqYBCIiBAhKfARKMAQgCEk4KBgoCYm0QARAzGhIJAH7Qy4mwBQAhAH7Qy4mwBQAiFAlNaE/bibAFABABGWwpIUxuR1TOMhgKFggCEeUF/NuJsAUAGAAhAAAAAAAAAAASOAoGCgJiZBAAEDMaEgkAftDLibAFACEAftDLibAFADIYChYIAhHlBfzbibAFABgAIQAAAAAAAAAAIABIgPzU/c0ucLbE7/rNLhIAIAEqGC9obVJWSjRTQXZ1ckhoR1hRNWpndEE9PRLDAQgCEr4BChx6RFZHcnJ0WkxkTSs0QlR5YmcrSENPcldneW89EmZaOkFEcXRBWndYdlhzUGdCK3VXODJoQkF6ais0emdYN3pUbzgybEF4ZlBFYkpZQjhGY1NJeGtBMW02dFUyYlhtVnpYRFZBeit6UWFBZEZnYUhOVnVxY3JJS0FnMWVIOXZ0bkhnPT0YACAAKAAw2JmV3qCY6wI4AEAAShw1dXN5L2NwZnBpMUV0b0JIRGdYSXMwcWI0ckE9WgBlAAAAABLDAQgDEr4BChx5NVdFMjd1STZ2WC9EZUlTSEp6bmpNcXVXV3M9EmZaOkFEcXRBWnhCS0lrOHYyeHhxQ29yL2QxMXFmcVk3UFJkak5VQ0VxYW5lQXV5bC9Lb3BrcnlkR1MwbFVLUUVzYUxyb0VLNld1ZTRWWFpqTm5LcFhFUjhJOWJuY1VXZGlGS0FnPT0YACAAKAAw2JmV3qCY6wI4AEAAShw3OWwrTFJFVXBpYUV2REQrRzQzY3BYU3R3QmM9WgBlAAAAABKvAgiYARKpAgocNnpLaG5tYjFlN2FybFozYVY2cFhqTHNBQzVrPRKmAVo6QURxdEFaemJNaWdwTnZ5dXF2bkd3ZjI1T1FWbFZsN3JhOWF5Sm16aERwUUFjc1Q4czB2ZXFTZHpEUVR3cStQUmZHNkgyeHRESEZDN2NuVU4vSG9odnZBM05Fa003OHk3MExrdEJsbDdLSEl2L09qZkxlQkRjeEVSZVZGYjhWNUpoM090M1RNVmhzQmdjb1hrOVl1S1RLOHlxUlV0WkpxU0dRPT0YACACKAIwq5uFmNvq6wI4u+Pnlb8uQNHUxobJLkocTkFKRVBOUkdpeCtLOWpsWHkyeXNEaWtqcUFRPVogIh7//nlTVE13anB4eWZBalFlbk54YkxhdkVaci9xZz1lHOalShKvAgiWARKpAgocQnI5dHcyTmxtc2JDckpIYmRvbG5WSWxjVndFPRKmAVo6QURxdEFaemJNaWdwTnZ5dXF2bkd3ZjI1T1FWbFZsN3JhOWF5Sm16aERwUUFjc1Q4czRkTjE0aUZLbGYwRWF0aE5UVzI5Qk5sS2ZJaVhOTjlYSG5VQWVLWmNVSTgyWnVBUXJ6cVVsT3l4S1lUeU10SUlrVHNGN1h2SitKaTBYSEpCbDlxUWZQQ3BBNmsrdVZuZ2JmMm9QTnpBQ2lvaXJtZ2x3PT0YACACKAIwq5uFmNvq6wI4sPbi6r4uQNHUxobJLkocY3F6Y2pFNUtqRGNNaWhLRVRvY1ZtVjFYUERVPVogIh7//GxUVDlpY2V5YUphZDgzU0RXU0p3dTJBNkdxMD1l/RbshBKuAgiVARKoAgoca1hJSFRPTG1oNHZOMzZLa0FQWkN6RThnMWhzPRKmAVo6QURxdEFaemJNaWdwTnZ5dXF2bkd3ZjI1T1FWbFZsN3JhOWF5Sm16aERwUUFjc1Q4czZpa3lOV2ZGQ0FBQ2lEM1c5cnpaY0wvMEhIUEh2aWErVlI5U0JPS3NJS1loRzNFR1ZHdnFPSmZmSCsxTDlIZG5iZ0M5emdpb3pHWTJ4RW5PSXJZNjIwSHAzZGJlYTAyOUpWNU10cHVxSk5YOS81VzVBPT0YACAEKAQwq5uFmNvq6wI4kpLf6r4uQNHUxobJLkocSVUwcXQ4RUt2YUZXSjdpcU51by9CcEFRbkFzPVofIh3qVEIvQ1k5NHQ3d0VobExCQ2ppM3hMQnpzd0xFPWVONQr5Eq8CCJoBEqkCChxCOFAyU3VkZTBUNE9NZ2w3bmo5QUdXYlRQZms9EqYBWjpBRHF0QVp6Yk1pZ3BOdnl1cXZuR3dmMjVPUVZsVmw3cmE5YXlKbXpoRHBRQWNzVDhzN2p1ZlJVbWJwUDZoTUowZnQ4ODdvTzg1a1hsbTF0SDVmZWNWYjY0MGFTWmpNOXFoM0xnQWtxZHFCSkdwSjRlV2Y4bS9leGVUMExleld1VVhEWm1UQmRYeG5zVWNxZEQwVjFsbXBFOGZiZE5xYzVMaEE9PRgAIAIoAjCC056puoHsAjjFiZf7yy5AyYmX+8suShxTM1BIQUFTeVhwajh6MVM3MUQ3WVcvejAyQlE9WiAiHv//bDl4MW5ZU0JpdldjdXdYZ05mY3Vtc0tXNWpJPWVQPjOfEq8CCAoSqgIKHE5oNjhILzRWRjFPUUxxODhVbkdqMnF2NmN4QT0SpgFaOkFEcXRBWnpiTWlncE52eXVxdm5Hd2YyNU9RVmx6c0ZOYzlGd2lUb1hXaHRncVlRd29oT25CaERuRDhlUFJkUDRwKzdkK0Y3Q1RrMStzVW54VVkxcHkxM28yMlNDV3dLWjJHcEptbC92bzR6NDd3SDVFanBQYkN5RlpXTmgrSkpsS2U2WTIzOEVnZVRmUWx3YXcxckxXMFQ3TEZTeEpXaDd1UT09GAAgAygDMKubhZjb6usCOL6jruGeLEDR1MaGyS5KHC9DYzdBYlI0Q2YxcnkzMzJpejdpd2doa1I3ND1aISIf//nMZS9rWWpXcGtXMlpzZENGRlJSdW5jZkdwUmQwPWUu+E9MEq0CCAUSqAIKHGt0SXE1NXB4ME1CRTg2d3FXK01wd0o2L3l4ST0SpgFaOkFEcXRBWnpiTWlncE52eXVxdm5Hd2YyNU9RVmx6c0ZOYzlGd2lUb1hXaHRncVlRd29oYkdEbjh3Vm4yZEIwTHI2bmRIZEpJOFRjK2NrYkJ5VGNDdGw2aHpFTm9zbHZEM09hbk4xTERzMlBIc3RoUHpRb1Y1a0xXYTJscEJxdlJnZm9naEYrcHpzZjVLQUZpR28wdUhma2NhMGV1cGRyRkZ2dz09GAAgBCgEMKubhZjb6usCON2Zu+v8KkDR1MaGyS5KHHZEKzM1MDFhYU4vV0w3UWtyLzVBWE4yZHFVOD1aHyId8FhCR1E3WFVob3Z0c3pOZUlPTFpnbnl4eVlycz1l2sGGbhKuAggJEqkCChxZMUVXTDlFbEVhWHQwU2g2bkUvbWg5YU5ScG89EqYBWjpBRHF0QVp6Yk1pZ3BOdnl1cXZuR3dmMjVPUVZsenNGTmM5RndpVG9YV2h0Z3FZUXdva1VPTUJFeXVsbklkclBPZ1NvWWNBcjNPSjVvYmRoekZ2NGtSeHdFNy9rSTVCNXZOcnFUemg4S3N2TGx3c05QVHl3enhNWWgvZkQ1dElKcndWUnhPYjVYZmFEa0FhM3VIdEprUXZyVXJYWXQ2dW9jOFE9PRgAIAMoAzDM0L3anZHsAjiWuJuV1StAp+TU/c0uShxFQjBPMVlkSDM1UTBNQmUxcmJVeE1BejhzdDA9WiAiHv/xMTRJTXp4RHVqUlB2aXpURmZxaFd5OWZqaVljPWU3Azs8Eq8CCAsSqgIKHHNxbm1xZ01iQ0lwaEhXMnlBa3VJN0RzWmpwVT0SpgFaOkFEcXRBWnpiTWlncE52eXVxdm5Hd2YyNU9RVmx6c0ZOYzlGd2lUb1hXaHRncVlRd29yVDhXYm1wRUJybHpPMUlGTS9wbWhOaHZrQWNaalpXa2F4WHh6OVVwdjN3cjI1RnZSLzM0WTM3LzNxZzRGbGxDZkpzMG45SGxNWXZuTURJUXpOdFBYL1lnTzNWUzM1LzNSMFB5eFhwS1VrOXZXL2dsZz09GAAgAigCMKubhZjb6usCOJ+9ppOULEDR1MaGyS5KHDljSklyd1ZrSDhScGtYWHpJOHZEY0xPK0hHaz1aISIf//ndRkNZSjlGT1Q2MjZsZlhQM1U5VGZtTmYzVHpFPWVsU+k5Eq0CCAcSqAIKHEJ2YXBCMTY0aHlQRkVueEpzd2trTFNUZEVWMD0SpgFaOkFEcXRBWnpiTWlncE52eXVxdm5Hd2YyNU9RVmx6c0ZOYzlGd2lUb1hXaHRncVlRd29zMUFpT3RTT3FzdDNhVVhzVzI4QmZjMTEvZlJSSVJPcHdlbUZRZUowQTdUbHhHakRsdUZKbEpMSDJQQTQwa1M1MXdpWEFlRWNZczFid1N6d1U5VXVnTk1RT0lkYy9CeVUwcEIydFhWMWhGRkd0QkFsdz09GAAgBCgEMKubhZjb6usCON6Zu+v8KkDR1MaGyS5KHHp5NC85WmtJM2pPN0lJTk4zcnRBa241Sm1NOD1aHyId8WNQRDdqbHMyY05naGVMOTh2akd6dkZGbUNaaz1ljqfPSxKtAggGEqgCChxJZHliK0RIOEZTbm1Sc21Bei9STDFQY0xtSzQ9EqYBWjpBRHF0QVp6Yk1pZ3BOdnl1cXZuR3dmMjVPUVZsenNGTmM5RndpVG9YV2h0Z3FZUXdvdE5GaGlFdjBXTmdQVVBYdkpBWGxTNDhNcENTUEw2c09yKzVPdmltOGlvdWJkeFRoMnZZYXJlNElRbmRkYU1jQ0dZNjhsS2l1cmFuRy9TaS9TYk5xdm0xTkxyTU03WHBocmovODZ5Ui83aHhVYlUrWFE9PRgAIAMoAzCrm4WY2+rrAjjdmbvr/CpA0dTGhskuShxWT0pkbTFCY0U2S09RaDFJOGpFZ3doR0dQM2M9Wh8iHfN3SlpJUXE1RVZWRTBPZDVYZWJSbjUxcS96a009ZUTgVVASqwEIARKmAQocL0VLTGFVVXlNZGJLRWsxQmEyVWlueURuZjdJPRJOWjpBRHF0QVp6bDZpZi8zR0FaYjliSS9YNE1XTU03Rm14VFJpTGdVU2dUUlN5d2JUWnUvVlZmVHRjaVRmYVVCSm1ObkplT0dZdnNMTkdiGAAgACgAMNiZld6gmOsCOABAAEocVStHR0l0WkVEcFpzSVNsT1VhSVR1SUxkTW5JPVoAZQAAAAAYAA==",
+   "version": 1
+}

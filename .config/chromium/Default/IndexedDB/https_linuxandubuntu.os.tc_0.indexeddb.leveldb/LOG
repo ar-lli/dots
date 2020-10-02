@@ -1,0 +1,5 @@
+2020/08/17-13:00:33.091 5686e Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_linuxandubuntu.os.tc_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/17-13:00:50.738 33845 Level-0 table #5: started
+2020/08/17-13:00:50.749 33845 Level-0 table #5: 9441 bytes OK
+2020/08/17-13:00:50.752 33845 Delete type=0 #3
+2020/08/17-13:00:50.752 33845 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

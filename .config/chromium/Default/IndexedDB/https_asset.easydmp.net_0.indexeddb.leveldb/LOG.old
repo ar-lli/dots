@@ -1,0 +1,15 @@
+2020/08/15-17:19:14.574 10fa5 Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_asset.easydmp.net_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/15-17:19:14.574 10fa5 Recovering log #11
+2020/08/15-17:19:14.574 10fa5 Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_asset.easydmp.net_0.indexeddb.leveldb/000011.log 
+2020/08/15-17:19:36.948 13bf2 Level-0 table #16: started
+2020/08/15-17:19:36.956 13bf2 Level-0 table #16: 1177 bytes OK
+2020/08/15-17:19:36.959 13bf2 Delete type=0 #11
+2020/08/15-17:19:36.959 13bf2 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/15-17:19:36.960 13bf2 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x08\x00e\x00c\x00d\x00s\x00t\x00p\x00d\x00s' @ 121 : 1
+2020/08/15-17:19:36.960 13bf2 Compacting 1@1 + 1@2 files
+2020/08/15-17:19:36.962 13bf2 Generated table #17@1: 19 keys, 895 bytes
+2020/08/15-17:19:36.962 13bf2 Compacted 1@1 + 1@2 files => 895 bytes
+2020/08/15-17:19:36.965 13bf2 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/15-17:19:36.966 13bf2 Delete type=2 #13
+2020/08/15-17:19:36.966 13bf2 Delete type=2 #16
+2020/08/15-17:19:36.966 13bf2 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x08\x00e\x00c\x00d\x00s\x00t\x00p\x00d\x00s' @ 121 : 1 .. (end); will stop at (end)

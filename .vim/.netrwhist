@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/arianna'
+let g:netrw_dirhist_9='/home/arianna/prova_latex'
+let g:netrw_dirhist_8='/home/arianna/.local/bin'
+let g:netrw_dirhist_7='/home/arianna'
+let g:netrw_dirhist_6='/home/arianna/.cache'
+let g:netrw_dirhist_5='/home/arianna/Documents/Università/Terzo anno/LPL/lab_ocaml/latex'
+let g:netrw_dirhist_4='/home/arianna/Documents/Università/Terzo anno/LPL/lab_ocaml/ocaml'
+let g:netrw_dirhist_3='/home/arianna/prova_musica'
+let g:netrw_dirhist_2='/home/arianna/Music/TREDICI PIETRO/Assurdo'
+let g:netrw_dirhist_1='/home/arianna/Music/TREDICI PIETRO'

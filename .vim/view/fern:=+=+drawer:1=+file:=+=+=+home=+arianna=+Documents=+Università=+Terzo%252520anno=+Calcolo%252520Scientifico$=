@@ -1,0 +1,202 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> <nowait>  <Plug>(fern-action-cancel)
+nmap <buffer> <nowait>  <Plug>(fern-action-leave)
+nmap <buffer> <nowait> <NL> <Plug>(fern-action-mark)j
+nmap <buffer> <nowait>  k<Plug>(fern-action-mark)
+nmap <buffer> <nowait>  <Plug>(fern-action-redraw)
+nmap <buffer> <nowait>  <Plug>(fern-action-open-or-enter)
+nmap <buffer> <nowait> ! <Plug>(fern-action-hidden)
+vmap <buffer> <nowait> - <Plug>(fern-action-mark)
+nmap <buffer> <nowait> - <Plug>(fern-action-mark)
+nmap <buffer> . <Plug>(fern-action-repeat)
+nmap <buffer> ? <Plug>(fern-action-help)
+nmap <buffer> <nowait> C <Plug>(fern-action-clipboard-copy)
+nmap <buffer> <nowait> D <Plug>(fern-action-trash)
+nmap <buffer> <nowait> E <Plug>(fern-action-open:side)
+nmap <buffer> <nowait> K <Plug>(fern-action-new-dir)
+nmap <buffer> <nowait> M <Plug>(fern-action-clipboard-move)
+nmap <buffer> <nowait> N <Plug>(fern-action-new-file)
+nmap <buffer> <nowait> P <Plug>(fern-action-clipboard-paste)
+nmap <buffer> <nowait> R <Plug>(fern-action-rename)
+nmap <buffer> a <Plug>(fern-action-choice)
+nmap <buffer> <nowait> c <Plug>(fern-action-copy)
+nmap <buffer> <nowait> e <Plug>(fern-action-open)
+nmap <buffer> <nowait> fe <Plug>(fern-action-exclude)
+nmap <buffer> <nowait> fi <Plug>(fern-action-include)
+nmap <buffer> <nowait> h <Plug>(fern-action-collapse)
+nmap <buffer> <nowait> i <Plug>(fern-action-reveal)
+nmap <buffer> <nowait> l <Plug>(fern-action-open-or-expand)
+nmap <buffer> <nowait> m <Plug>(fern-action-move)
+nmap <buffer> <nowait> s <Plug>(fern-action-open:select)
+nmap <buffer> <nowait> t <Plug>(fern-action-open:tabedit)
+nmap <buffer> <nowait> x <Plug>(fern-action-open:system)
+nmap <buffer> <nowait> z <Plug>(fern-action-zoom)
+nmap <buffer> <silent> <Plug>(fern-action-terminal) <Plug>(fern-action-terminal:edit)
+nmap <buffer> <silent> <Plug>(fern-action-terminal:edit) <Plug>(fern-action-terminal:edit-or-error)
+nmap <buffer> <silent> <expr> <Plug>(fern-action-terminal:side) fern#smart#drawer(   "\<Plug>(fern-action-terminal:left)",   "\<Plug>(fern-action-terminal:right)", )
+nmap <buffer> <silent> <Plug>(fern-action-rename) <Plug>(fern-action-rename:split)
+nmap <buffer> <silent> <Plug>(fern-action-rename:edit) <Plug>(fern-action-rename:edit-or-error)
+nmap <buffer> <Plug>(fern-action-tcd) <Plug>(fern-action-tcd:cursor)
+nmap <buffer> <Plug>(fern-action-lcd) <Plug>(fern-action-lcd:cursor)
+nmap <buffer> <Plug>(fern-action-cd) <Plug>(fern-action-cd:cursor)
+nmap <buffer> <Plug>(fern-wait) <Plug>(fern-wait-viewer:ready)
+nmap <buffer> <nowait> <C-L> <Plug>(fern-action-redraw)
+nmap <buffer> <nowait> <C-C> <Plug>(fern-action-cancel)
+nmap <buffer> <silent> <expr> <Plug>(fern-open-or-expand) fern#mapping#deprecated('fern-open-or-expand', 'fern-action-open-or-expand')
+nmap <buffer> <silent> <expr> <Plug>(fern-open-or-enter) fern#mapping#deprecated('fern-open-or-enter', 'fern-action-open-or-enter')
+nmap <buffer> <silent> <Plug>(fern-action-open) <Plug>(fern-action-open:edit)
+nmap <buffer> <silent> <Plug>(fern-action-open:edit) <Plug>(fern-action-open:edit-or-error)
+nmap <buffer> <silent> <expr> <Plug>(fern-action-open-or-expand) fern#smart#leaf(   "\<Plug>(fern-action-open)",   "\<Plug>(fern-action-expand)", )
+nmap <buffer> <silent> <expr> <Plug>(fern-action-open-or-enter) fern#smart#leaf(   "\<Plug>(fern-action-open)",   "\<Plug>(fern-action-enter)", )
+nmap <buffer> <silent> <expr> <Plug>(fern-action-open:side) fern#smart#drawer(   "\<Plug>(fern-action-open:left)",   "\<Plug>(fern-action-open:right)", )
+nmap <buffer> <nowait> <BS> 
+nmap <buffer> <nowait> <C-H> <Plug>(fern-action-leave)
+nmap <buffer> <nowait> <C-M> <Plug>(fern-action-open-or-enter)
+nmap <buffer> <nowait> <F5> <Plug>(fern-action-reload)
+nmap <buffer> <Plug>(fern-action-reload) <Plug>(fern-action-reload:all)
+nmap <buffer> <nowait> <C-K> k<Plug>(fern-action-mark)
+nmap <buffer> <nowait> <C-J> <Plug>(fern-action-mark)j
+vmap <buffer> <Plug>(fern-action-mark) <Plug>(fern-action-mark:toggle)
+nmap <buffer> <Plug>(fern-action-mark) <Plug>(fern-action-mark:toggle)
+nmap <buffer> <silent> <expr> <Plug>(fern-action-hidden-toggle) fern#mapping#deprecated('fern-action-hidden-toggle', 'fern-action-hidden:toggle')
+nmap <buffer> <silent> <expr> <Plug>(fern-action-hidden-unset) fern#mapping#deprecated('fern-action-hidden-unset', 'fern-action-hidden:unset')
+nmap <buffer> <silent> <expr> <Plug>(fern-action-hidden-set) fern#mapping#deprecated('fern-action-hidden-set', 'fern-action-hidden:set')
+nmap <buffer> <Plug>(fern-action-hidden) <Plug>(fern-action-hidden:toggle)
+nmap <buffer> <Plug>(fern-action-zoom) <Plug>(fern-action-zoom:half)
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=unload
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=nvic
+setlocal conceallevel=2
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal cursorlineopt=number,line
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'fern'
+setlocal filetype=fern
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=bin,octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal relativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=yes
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=%{lightline#link()}%#LightlineLeft_active_0#%(\ %{lightline#mode()}\ %)%{(&paste)?\"|\":\"\"}%(\ %{&paste?\"PASTE\":\"\"}\ %)%#LightlineLeft_active_0_1#%#LightlineLeft_active_1#%(\ %R\ %)%{(&readonly)&&(1)?\"|\":\"\"}%(\ %t\ %)%#LightlineLeft_active_1_2#%#LightlineMiddle_active#%=%#LightlineRight_active_2_3#%#LightlineRight_active_2#%(\ %{&fenc!=#\"\"?&fenc:&enc}\ %)%{1||1?\"|\":\"\"}%(\ %{&ft!=#\"\"?&ft:\"no\ ft\"}\ %)%{1?\"|\":\"\"}%(\ %<\ %)%#LightlineRight_active_1_2#%#LightlineRight_active_1#%(\ %3p%%\ %)%#LightlineRight_active_0_1#%#LightlineRight_active_0#%(\ %3l:%-2v\ %)
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'fern'
+setlocal syntax=fern
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal winfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+let s:l = 11 - ((10 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
+doautoall SessionLoadPost
+" vim: set ft=vim :

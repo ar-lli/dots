@@ -1,0 +1,59 @@
+[bar/bar1]
+; Setup
+width = 100%
+height = 2
+offset-y = 0
+offset-x = 0
+;border-top-size = 1
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+bottom = true
+override-redirect = false
+font-0 = Monospace:size=20;3
+;font-1 = "Font Awesome 5:style=Solid:pixelsize=12;3"
+;font-2 = "Font Awesome 5:style=Regular:pixelsize=12;3"
+;font-3 = "Font Awesome:pixelsize=12;3"
+background = #00000000
+;foreground = ${xrdb:color7}
+;border-color = #000000
+;background = #000000
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 1.5
+modules-center = i3
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+inline-mode = false
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+ws-icon-default = cccc
+label-empty = %icon%
+label-empty-foreground = #fcc77e
+label-empty-background = #fcc77e
+label-occupied = %icon%
+label-occupied-underline = #e85d2a
+label-occupied-foreground = #e85d2a
+label-occupied-background = #e85d2a
+label-separator = -
+label-separator-padding = 0
+label-separator-foreground = #ff99ff
+label-focused = %icon%
+label-focused-foreground = #5689b6
+label-focused-background = #5689b6
+label-focused-underline =  #5689b6
+label-urgent = %icon%
+label-urgent-foreground = #eb301e
+label-urgent-background = #eb301e
+label-urgent-underline = #eb301e
+
+[settings]
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+;pseudo-transparency = true

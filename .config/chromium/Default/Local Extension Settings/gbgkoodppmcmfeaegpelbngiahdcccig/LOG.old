@@ -1,0 +1,15 @@
+2020/10/01-11:11:33.381 1ceed Reusing MANIFEST /home/arianna/.config/chromium/Default/Local Extension Settings/gbgkoodppmcmfeaegpelbngiahdcccig/MANIFEST-000001
+2020/10/01-11:11:33.381 1ceed Recovering log #232
+2020/10/01-11:11:33.393 1ceed Reusing old log /home/arianna/.config/chromium/Default/Local Extension Settings/gbgkoodppmcmfeaegpelbngiahdcccig/000232.log 
+2020/10/01-11:12:33.768 1d628 Level-0 table #237: started
+2020/10/01-11:12:33.812 1d628 Level-0 table #237: 2350761 bytes OK
+2020/10/01-11:12:33.816 1d628 Delete type=0 #232
+2020/10/01-12:12:04.591 1d628 Compacting 1@1 + 1@2 files
+2020/10/01-12:12:04.620 1d628 Generated table #238@1: 9 keys, 780730 bytes
+2020/10/01-12:12:04.620 1d628 Compacted 1@1 + 1@2 files => 780730 bytes
+2020/10/01-12:12:04.629 1d628 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/10/01-12:12:04.630 1d628 Delete type=2 #237
+2020/10/01-12:12:04.630 1d628 Delete type=2 #234
+2020/10/01-12:23:25.590 1d628 Level-0 table #240: started
+2020/10/01-12:23:25.612 1d628 Level-0 table #240: 2343416 bytes OK
+2020/10/01-12:23:25.616 1d628 Delete type=0 #236

@@ -1,0 +1,6 @@
+2020/10/01-11:11:33.077 1ceda Reusing MANIFEST /home/arianna/.config/chromium/Default/Sync Data/LevelDB/MANIFEST-000001
+2020/10/01-11:11:33.078 1ceda Recovering log #225
+2020/10/01-11:11:33.079 1ceda Reusing old log /home/arianna/.config/chromium/Default/Sync Data/LevelDB/000225.log 
+2020/10/01-11:12:49.917 1d628 Level-0 table #229: started
+2020/10/01-11:12:49.930 1d628 Level-0 table #229: 107649 bytes OK
+2020/10/01-11:12:49.933 1d628 Delete type=0 #225

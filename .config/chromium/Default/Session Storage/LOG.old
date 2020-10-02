@@ -1,0 +1,8 @@
+2020/10/01-11:11:33.210 1cef0 Reusing MANIFEST /home/arianna/.config/chromium/Default/Session Storage/MANIFEST-000001
+2020/10/01-11:11:33.211 1cef0 Recovering log #35
+2020/10/01-11:11:33.212 1cef0 Level-0 table #38: started
+2020/10/01-11:11:33.215 1cef0 Level-0 table #38: 27163 bytes OK
+2020/10/01-11:11:33.216 1cef0 Recovering log #38
+2020/10/01-11:11:33.216 1cef0 Reusing old log /home/arianna/.config/chromium/Default/Session Storage/000038.log 
+2020/10/01-11:11:33.220 1cef0 Delete type=0 #35
+2020/10/01-11:11:33.220 1cef0 Delete type=2 #39

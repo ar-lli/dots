@@ -1,0 +1,15 @@
+2020/10/01-14:02:25.232 1e3a Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/10/01-14:02:25.232 1e3a Recovering log #33
+2020/10/01-14:02:25.233 1e3a Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000033.log 
+2020/10/01-16:06:06.808 621a Level-0 table #38: started
+2020/10/01-16:06:06.835 621a Level-0 table #38: 3444 bytes OK
+2020/10/01-16:06:06.839 621a Delete type=0 #33
+2020/10/01-16:06:06.839 621a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/10/01-16:06:06.839 621a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x00\x00\xc8\x09\x00d\x00a\x00t\x00a\x00b\x00a\x00s\x00e\x00s' @ 1112 : 1
+2020/10/01-16:06:06.839 621a Compacting 1@1 + 1@2 files
+2020/10/01-16:06:06.842 621a Generated table #39@1: 62 keys, 2071 bytes
+2020/10/01-16:06:06.842 621a Compacted 1@1 + 1@2 files => 2071 bytes
+2020/10/01-16:06:06.845 621a compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/10/01-16:06:06.845 621a Delete type=2 #35
+2020/10/01-16:06:06.845 621a Delete type=2 #38
+2020/10/01-16:06:06.846 621a Manual compaction at level-1 from '\x00\x03\x00\x00\xc8\x09\x00d\x00a\x00t\x00a\x00b\x00a\x00s\x00e\x00s' @ 1112 : 1 .. (end); will stop at (end)

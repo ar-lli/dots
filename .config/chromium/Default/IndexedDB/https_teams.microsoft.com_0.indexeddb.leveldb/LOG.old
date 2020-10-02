@@ -1,0 +1,14 @@
+2020/10/01-11:12:03.486 1ceec Reusing MANIFEST /home/arianna/.config/chromium/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/10/01-11:12:03.487 1ceec Recovering log #112
+2020/10/01-11:12:03.487 1ceec Reusing old log /home/arianna/.config/chromium/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/000112.log 
+2020/10/01-11:12:07.152 1d48b Level-0 table #118: started
+2020/10/01-11:12:07.182 1d48b Level-0 table #118: 1160824 bytes OK
+2020/10/01-11:12:07.186 1d48b Delete type=0 #112
+2020/10/01-11:12:07.499 1d48b Compacting 1@1 + 2@2 files
+2020/10/01-11:12:07.584 1d48b Generated table #119@1: 8180 keys, 2171035 bytes
+2020/10/01-11:12:07.594 1d48b Generated table #120@1: 3702 keys, 274288 bytes
+2020/10/01-11:12:07.594 1d48b Compacted 1@1 + 2@2 files => 2445323 bytes
+2020/10/01-11:12:07.597 1d48b compacted to: files[ 0 0 2 0 0 0 0 ]
+2020/10/01-11:12:07.597 1d48b Delete type=2 #114
+2020/10/01-11:12:07.597 1d48b Delete type=2 #118
+2020/10/01-11:12:07.597 1d48b Delete type=2 #115
