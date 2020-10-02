@@ -155,6 +155,7 @@ bindsym $mod+Shift+u exec "$HOME/.local/bin/script_unipicker.sh"
 bindsym $mod+Shift+v exec "rofi-vim -rvim"
 bindsym $mod+ctrl+r exec "rofi-ranger -rranger"
 bindsym $mod+b exec blueman-manager
+bindsym $mod+Shift+z exec zathura
 # Start Applications default config
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F3 exec pcmanfm
