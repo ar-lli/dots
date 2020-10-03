@@ -1,0 +1,21 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	color2 = '2ECC71',
+	default_color = 'BBD4A6',
+	double_buffer = true,
+	font = 'Lister Crypt:size=10',
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+conky.text = [[
+iloveandonlylove \
+thefairersex
+]]

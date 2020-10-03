@@ -1,0 +1,37 @@
+conky.config = {
+	alignment = none,
+	background = true,
+	color2 = '2ECC71',
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'RobotoMono Nerd Font:style=Regular:size=8',
+	gap_x = 1650,
+	gap_y = 50,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+RANGER
+
+File operations:
+r	Open file with
+z	Toggle settings
+zh	View hidden files
+cw	Rename current file/dir
+
+Tabs:
+<C-n>	Create new tab
+<C-w>	Close current tab
+tab		Next tab
+
+Manage files:
+space	To mark a file/dir
+v		To mark all files/dir
+uv		To unmark all selected files/dir
+
+]]

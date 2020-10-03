@@ -1,0 +1,48 @@
+conky.config = {
+	alignment = none,
+	background = true,
+	color2 = '2ECC71',
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'RobotoMono Nerd Font:style=Regular:size=8',
+	gap_x = 50,
+	gap_y = 650,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+VIM
+
+Window:
+H	Move to top of screen
+M	Move to middle of screen
+L	Move to bottom of screen
+
+Search & Replace:
+:%s/search/replace/gc
+
+Tab pages:
+:tabedit [file]   	 	Edit file in a new tab:
+:tabclose			Close current tab
+:tabs				List all tab
+:tabn				Go to next tab
+:tabp				Go to previous tab
+
+Split screen:
+<C-w> + _		Max out height 
+<C-w> + |		Max out the width 
+<C-w> + =		Normalize all split sizes
+<C-w> + o		Close all split exept the current
+
+Vimtex mappings:
+lv	vimtex-view
+ll 	vimtex-compile
+lk	vimtex-stop
+le	vimtex-showerrors
+
+]]
