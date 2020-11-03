@@ -24,7 +24,7 @@ alias album='id3v2 -A'
 alias track='id3v2 -T'
 alias year='id3v2 -y'
 alias unipicker='unipicker --command fzf'
-alias tetris='tetris --level-start 1'
+alias tetris='tetris --start-level 1'
 # Configuring $PATH
 path=("/usr/local/texlive/2020/bin/x86_64-linux" "$path[@]")
 export PATH
@@ -46,10 +46,15 @@ zle_highlight=(default:bold)
 ## Plugins
 # zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4C566A"
 
 # zsh-history-substring-search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# set history file
+HISTFILE=~/.zhistory
+HISTSIZE=1000
+SAVEHIST=500
 
 # zsh-syntax-hightlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
