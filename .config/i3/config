@@ -83,15 +83,16 @@ bindsym $mod+z focus child
 
 
 # Workspace
+workspace_auto_back_and_forth yes
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+1 workspace number 1:I
+bindsym $mod+2 workspace number 2:II
+bindsym $mod+3 workspace number 3:III
+bindsym $mod+4 workspace number 4:IV
+bindsym $mod+5 workspace number 5:V
+bindsym $mod+6 workspace number 6:VI
+bindsym $mod+7 workspace number 7:VII
+bindsym $mod+8 workspace number 8:VIII
 #bindsym $mod+9 workspace 9
 #bindsym $mod+0 workspace 10
 
@@ -151,7 +152,7 @@ bindsym $mod+Shift+F2 exec chromium
 bindsym $mod+F3 exec telegram-desktop
 bindsym $mod+F4 "workspace 4; exec termite -e cmus"
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+Ctrl+u exec "$HOME/.local/bin/script_unipicker.sh"
+bindsym $mod+Ctrl+u exec "$HOME/.local/bin/script_unipicker"
 bindsym $mod+Ctrl+v exec "rofi-vim -rvim"
 bindsym $mod+Ctrl+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 #bindsym $mod+ctrl+r exec "rofi-ranger -rranger"
@@ -240,19 +241,22 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
-#exec --no-startup-id volumeicon
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id clipit
+# exec --no-startup-id volumeicon
 exec --no-startup-id blueman-applet
 exec --no-startup-id start_conky_maia
-#exec --no-startup-id "start_conky_memo_vim"
-#exec --no-startup-id "start_conky_memo_ranger"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_anne_lister"
+# adjust screen brightness
 exec --no-startup-id /home/arianna/.local/bin/brightness_toggle
+# clear screenshots directory in ~
+exec --no-startup-id /home/arianna/.local/bin/clear_screenshots
 
-#exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_alway --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+# launch polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Floating Mode
 
@@ -340,7 +344,7 @@ bar {
 	position top
 	separator_symbol "|"
 	workspace_buttons yes
-#	font pango:SauceCodeProNerd Font Bold 8
+	strip_workspace_numbers yes
 	font pango: RobotoMono Nerd Font Regular 10
 	strip_workspace_name yes
 	colors {
@@ -352,7 +356,7 @@ bar {
 	}
   }
 
-# bar settings second monitor
+# BAR SETTINGS SECOND MONITOR
 # bar {
 #	tray_output none
 #	output VGA1
@@ -380,7 +384,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 # Windows
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 2.5
 # class                 border  backgr. text    indicator child_border
 client.focused          #a3be8c #a3be8c #2e3440 #bf616a   #a3be8c
 client.focused_inactive #81a1c1 #81a1c1 #2e3440 #484e50   #81a1c1
