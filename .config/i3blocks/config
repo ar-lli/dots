@@ -1,27 +1,32 @@
+align=center
+background=#3B4252 
+color=#3B4252 
+full_text= "   "
 separator=false
-separator_block_width=1
+separator_block_width=0
 
-[cmus_info]
-min_width=300
+[click_change_player]
+full_text=" Change Player  "
+command=/home/arianna/.config/i3blocks/change_player.sh
+background=#3B4252
+color=#A3BE8C
+interval=0
+
+[separator]
+
+[player_info]
+min_width=100
 aligh=left
 separator=false
-command=/home/arianna/.config/i3blocks/cmus_info.py
+command=/home/arianna/.config/i3blocks/audio_player_info.sh
 interval=1
 
-[weather]
-min_width=300
-align=center
-separator=false
-command=/home/arianna/.config/i3blocks/weather.sh
-interval=3600
+[separator]
 
 #[xbacklight_brightness]
 #command=/home/arianna/.config/i3blocks/xbacklight_brightness.sh
 #interval=1
 
-[pulse_volume]
-command=/home/arianna/.config/i3blocks/pulse_volume.sh
-interval=1
 
 [audio_device]
 command=/home/arianna/.config/i3blocks/audio_device.py
@@ -30,6 +35,20 @@ interval=10
 #[wifi_connection]
 #command=/home/arianna/.config/i3blocks/wifi_connection.sh
 #interval=60
+
+[separator]
+
+[weather]
+align=center
+separator=false
+command=/home/arianna/.config/i3blocks/weather.sh
+interval=3600
+
+[separator]
+
+[pulse_volume]
+command=/home/arianna/.config/i3blocks/pulse_volume.sh
+interval=1
 
 [battery]
 command=/home/arianna/.config/i3blocks/battery.sh

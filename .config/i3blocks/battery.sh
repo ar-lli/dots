@@ -13,8 +13,8 @@ if [[ $statbat == "Charging" ]]
 then
     echo " ⚡ $percbat% "
     echo " ⚡ $percbat% "
-    echo "#3B4252"
     echo "#A3BE8C"
+    echo "#3B4252"
 else
     if [[ 0 -lt $percbat && $percbat -le 10 ]]
     then
@@ -22,38 +22,38 @@ else
 	#echo "   ■ "
 	echo "     "
 	echo "     "
-	echo "#E5E9F0"
 	echo "#BF616A"
+	echo "#E5E9F0"
     elif [[ 10 -lt $percbat && $percbat -le 40 ]]
     then	
 	#echo "   ■ ■ "
 	#echo "   ■ ■ "
 	echo "    "
 	echo "    "
-	echo "#E5E9F0"
 	echo "#D08770"
+	echo "#E5E9F0"
     elif [[ 40 -lt $percbat && $percbat -le 60 ]]
     then	
 	#echo " ■ ■ ■ "
 	#echo " ■ ■ ■ "
 	echo "   "
 	echo "   "
-	echo "#3B4252"
 	echo "#EBCB8B"
+	echo "#3B4252"
     elif [[ 60 -lt $percbat && $percbat -le 80 ]]
     then	
 	#echo " ■ ■ ■ ■ "
 	#echo " ■ ■ ■ ■ "
 	echo "   "
 	echo "   "
-	echo "#3B4252"
 	echo "#A3BE8C"
+	echo "#3B4252"
     else
 	#echo " ■ ■ ■ ■ ■ "
 	#echo " ■ ■ ■ ■ ■ "
 	echo "   "
 	echo "   "
-	echo "#3B4252"
 	echo "#A3BE8C"
+	echo "#3B4252"
     fi
 fi

@@ -20,19 +20,27 @@ if [[ $mute == "yes" ]]
 then
     echo "  mute "
     echo "  mute "
-    echo "#3B4252"
     echo "#E5E9F0"
+    echo "#3B4252"
 else
     if [[ 0 -lt $volume && $volume -le 50 ]]
     then
 	echo "  $volume% "
 	echo "  $volume% "
-	echo "#3B4252"
 	echo "#EBCB8B"
+	echo "#3B4252"
+    elif [[ 51 -lt $volume && $volume -le 100 ]]
+    then
+	echo "  $volume% "
+	echo "  $volume% "
+	echo "#A3BE8C"
+	echo "#3B4252"
     else
 	echo "  $volume% "
 	echo "  $volume% "
+	echo "#BF616A"
 	echo "#3B4252"
-	echo "#A3BE8C"
+
+
     fi
 fi

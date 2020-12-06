@@ -38,7 +38,7 @@ if [ "$state" = "playing" ] || [ "$state" = "paused" ]; then
   fi
   printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
   echo ""
-  sh LyricsGet.sh "$artist" "$track" "$album"
+  sh LyricsGet "$artist" "$track" "$album"
 else
   echo "no cmus"
 fi

@@ -6,12 +6,12 @@ then
     echo  "   $date2 "
     echo  "   $date2 "
     echo "#D8DEE9"
-    echo "#E5E9F0"
+    echo "#3B4252"
 else
     echo  "   $date2 "
     echo  "   $date2 "
-    echo "#D8DEE9"
     echo "#5E81AC"
+    echo "#3B4252"
 fi
 
 exit 0

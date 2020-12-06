@@ -13,11 +13,20 @@ if output == "Family 17h (Models 10h-1fh) HD Audio Controller Analog Stereo" :
 
      print ("   system audio ")
      print ("   system audio ")
-     print ("#3B4252")
      print ("#D08770")
-else:
-     print (f"  {output} ")
-     print (f"  {output} ")
      print ("#3B4252")
-     print ("#88C0D0")
-
+elif output == "AUSDOM ANC8" :
+     print (f"  {output} ")
+     print (f"  {output} ")
+     print ("#B48EAD")
+     print ("#3B4252")
+elif output == "HD-Audio Generic Digital Stereo (HDMI)" :
+     print ("   HDMI AUDIO")
+     print ("   HDMI AUDIO")
+     print ("#D08770")
+     print ("#3B4252")
+else :
+     print ("   audio device")
+     print ("   audio device")
+     print ("#D08770")
+     print ("#3B4252")
