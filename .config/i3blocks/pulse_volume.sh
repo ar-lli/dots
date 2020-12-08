@@ -1,4 +1,10 @@
 #!/bin/bash
+# colors
+background="#3B4252"
+green="#A3BE8C"
+yellow="#EBCB8B"
+red="#BF616A"
+white="#D8DEE9"
 
 VolumeInfo=$(pacmd list-sinks | grep -e index:)
 regex='.*\*.*([0-9]+).*'
@@ -20,26 +26,26 @@ if [[ $mute == "yes" ]]
 then
     echo "  mute "
     echo "  mute "
-    echo "#E5E9F0"
-    echo "#3B4252"
+    echo $white
+    echo $background
 else
     if [[ 0 -lt $volume && $volume -le 50 ]]
     then
 	echo "  $volume% "
 	echo "  $volume% "
-	echo "#EBCB8B"
-	echo "#3B4252"
+	echo $yellow
+	echo $background
     elif [[ 51 -lt $volume && $volume -le 100 ]]
     then
 	echo "  $volume% "
 	echo "  $volume% "
-	echo "#A3BE8C"
-	echo "#3B4252"
+	echo $green
+	echo $background
     else
 	echo "  $volume% "
 	echo "  $volume% "
-	echo "#BF616A"
-	echo "#3B4252"
+	echo $red
+	echo $background
 
 
     fi

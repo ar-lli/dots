@@ -159,6 +159,7 @@ bindsym $mod+Ctrl+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 bindsym $mod+b exec blueman-manager
 bindsym $mod+Shift+z exec zathura
 bindsym $mod+Ctrl+h exec "termite -e htop"
+bindsym $mod+Ctrl+a exec anki
 # Start Applications default config
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F3 exec pcmanfm
@@ -222,6 +223,8 @@ bindsym $mod+ctrl+p exec "playerctld shift; notify-send 'player changed'"
 bindsym 0xff99 exec "playerctl --player playerctld play-pause"
 bindsym 0xff96 exec "playerctl --player playerctld previous"
 bindsym 0xff98 exec "playerctl --player playerctld next"
+bindsym $mod+0xff96 exec "playerctl --player playerctld position 5-"
+bindsym $mod+0xff98 exec "playerctl --player playerctld position 5+"
 
 # Screenshot
 #bindsym Print exec flameshot gui
