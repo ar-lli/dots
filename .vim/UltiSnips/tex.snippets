@@ -195,7 +195,7 @@ snippet limsup "limsup" w
 endsnippet
 
 snippet part "d/dx" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
+\dfrac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
 context "math()"
@@ -220,13 +220,12 @@ snippet td "to the ... power" iA
 ^{$1}$0
 endsnippet
 
-context "math()"
-snippet rd "to the ... power" iA
-^{($1)}$0
-endsnippet
-
 snippet __ "subscript" iA
 _{$1}$0
+endsnippet
+
+snippet ^^ "subscript" iA
+^{$1}$0
 endsnippet
 
 ### sequence & subsequence ###
@@ -268,11 +267,11 @@ snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-snippet / "Fraction" i
-\\frac{${VISUAL}}{$1}$0
+snippet /d "dFraction" iA
+\\dfrac{$1}{$2}$0
 endsnippet
 
-snippet /d "Fraction" iA
+snippet / "Fraction" i
 \\frac{${VISUAL}}{$1}$0
 endsnippet
 
@@ -367,6 +366,10 @@ endsnippet
 
 snippet lrn "norm" iA
 \left\lVert ${1:${VISUAL}} \right\rVert$0
+endsnippet
+
+snippet lr| "absolute value" iA
+\\left| ${1:${VISUAL}} \\right|$0
 endsnippet
 
 ### MATRICES ###
@@ -562,8 +565,6 @@ endsnippet
 
 ### CALCULUS ###
 
-### Sequences and series ###
-
 snippet ooo "\infty" iA
 \infty
 endsnippet
@@ -584,6 +585,13 @@ endsnippet
 context "math()"
 snippet comp "°" i
 \circ
+endsnippet
+
+### Derivates
+
+context "math()"
+snippet pp "partial derivate in x" iA
+\\partial
 endsnippet
 
 ### LOGIC ###
@@ -657,6 +665,12 @@ snippet today "Date"
 `date +%d/%m/%Y`
 endsnippet
 
+# for gtd vectors
+context "math()"
+snippet vec "myvec" iA
+\myvec{$1}$0
+endsnippet
+
 ## TIKZ
 
 # square
@@ -713,4 +727,16 @@ $1
 \\end{proposizione}$0
 endsnippet
 
+## ANNA
+context "math()"
+snippet bb "\bullet" iA
+\\b
+endsnippet
+
+snippet XX "\otimes" iA
+\\otimes
+endsnippet
+snippet kkx "k[[x]]" iA
+k[[x]]
+endsnippet
 # vim:ft=snippets

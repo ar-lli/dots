@@ -2,7 +2,6 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <buffer> <nowait> <silent> <S-Tab> =UltiSnips#JumpBackwards()
 imap <buffer> <nowait> <silent> <F7> <Plug>(vimtex-cmd-create)
 inoremap <buffer> <silent> <Plug>(vimtex-delim-close) =vimtex#delim#close()
 inoremap <buffer> <silent> <Plug>(vimtex-cmd-create) =vimtex#cmd#create_insert()
@@ -107,7 +106,6 @@ xmap <buffer> <nowait> <silent> tsf <Plug>(vimtex-cmd-toggle-frac)
 nmap <buffer> <nowait> <silent> tsf <Plug>(vimtex-cmd-toggle-frac)
 nmap <buffer> <nowait> <silent> tsc <Plug>(vimtex-cmd-toggle-star)
 nmap <buffer> <nowait> <silent> tse <Plug>(vimtex-env-toggle-star)
-snoremap <buffer> <nowait> <silent> <S-Tab> :call UltiSnips#JumpBackwards()
 xmap <buffer> <nowait> <silent> <F7> <Plug>(vimtex-cmd-create)
 nmap <buffer> <nowait> <silent> <F7> <Plug>(vimtex-cmd-create)
 nnoremap <buffer> <Plug>(vimtex-view) :call b:vimtex.viewer.view('')
@@ -280,7 +278,7 @@ setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
 setlocal comments=sO:%\ -,mO:%\ \ ,eO:%%,:%
-setlocal commentstring=%\ %s
+setlocal commentstring=%%s
 setlocal complete=.,w,b,u,t
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -386,12 +384,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 69 - ((30 * winheight(0) + 28) / 57)
+let s:l = 1 - ((0 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-69
-normal! 0
+1
+normal! 09|
 let &so = s:so_save | let &siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost

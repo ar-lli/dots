@@ -1,5 +1,6 @@
-let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 argglobal
+balt ~/.config/i3blocks/audio_player_info.sh
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -124,24 +125,24 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 12,28fold
-30,139fold
-141,167fold
-169,201fold
-203,205fold
-207,232fold
-234,252fold
-254,285fold
-287,297fold
-299,311fold
-313,319fold
-321,397fold
-let s:l = 121 - ((91 * winheight(0) + 28) / 57)
+30,140fold
+142,172fold
+174,206fold
+208,210fold
+212,236fold
+238,259fold
+261,293fold
+295,305fold
+307,319fold
+321,327fold
+329,404fold
+let s:l = 162 - ((161 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-121
-normal! 0
-let &so = s:so_save | let &siso = s:siso_save
+162
+normal! 01|
+let &g:so = s:so_save | let &g:siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :

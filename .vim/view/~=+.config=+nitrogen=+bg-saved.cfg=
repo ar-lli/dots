@@ -1,5 +1,6 @@
-let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 argglobal
+balt ~/.config/nitrogen/nitrogen.cfg
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -123,13 +124,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 11) / 22)
+let s:l = 8 - ((7 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 028|
-let &so = s:so_save | let &siso = s:siso_save
+8
+normal! 0
+let &g:so = s:so_save | let &g:siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :

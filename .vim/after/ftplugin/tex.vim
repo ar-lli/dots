@@ -20,7 +20,7 @@ setlocal complete-=i
 setlocal completeopt=longest,menuone
 
 " SPELLING
-setlocal spell spelllang=it "highlight spelling mistakes
+setlocal spell spelllang=en,it "highlight spelling mistakes
 
 
 
