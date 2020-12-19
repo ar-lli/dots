@@ -66,7 +66,7 @@ set ttimeoutlen=50    " adjust delay between passing from normal to insert mode
 :noremap! <M-Down> <Down>
 :noremap <M-Up> k
 :noremap <M-Down> j
-" moving lines
+" swapping lines
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 nnoremap <M-j> :m .+1<CR>==
@@ -81,6 +81,9 @@ inoremap <M-Down> <Esc>:m .+1<CR>==gi
 inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
+
+" MAP UNJOIN LINE
+:noremap <C-j> i <CR> <ESC> d0 k$
 
 " REMAP <ESC> KEY IN INSERT MODE
 :inoremap jk <ESC>
@@ -156,12 +159,12 @@ call plug#begin('~/.vim/plugged')
 
 " VIMTEX plugin
 " All edits are taken from https://castel.dev/post/lecture-notes-1/
-Plug 'lervag/vimtex'
-let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_quickfix_mode = 0
-let g:latex_indent_enabled = 0
-let g:vimtex_indent_ignored_envs = ['document', 'itemize', 'enumerate', 'displaymath']
+" Plug 'lervag/vimtex'
+" let g:tex_flavor = 'latex'
+" let g:vimtex_view_method = 'zathura'
+" let g:vimtex_quickfix_mode = 0
+" let g:latex_indent_enabled = 0
+" let g:vimtex_indent_ignored_envs = ['document', 'itemize', 'enumerate', 'displaymath']
 " let g:vimtex_compiler_latexmk = { 
 "         \ 'executable' : 'latexmk',
 "         \ 'options' : [ 

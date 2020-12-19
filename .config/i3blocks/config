@@ -6,8 +6,8 @@ separator=false
 separator_block_width=0
 
 [click_change_player]
-full_text=" Change Player  "
-short_text=" C-P  "
+full_text="  Change Player"
+short_text="  C-P"
 command=/home/arianna/.config/i3blocks/change_player.sh
 background=#3B4252
 color=#A3BE8C
@@ -16,8 +16,8 @@ interval=0
 [separator]
 
 [click_play_pause]
-full_text=" Play - Pause  "
-short_text=" P-P  "
+full_text="  Play - Pause"
+short_text="  P-P"
 command=/home/arianna/.config/i3blocks/click_play_pause.sh
 background=#3B4252
 color=#88C0D0

@@ -159,7 +159,6 @@ bindsym $mod+Ctrl+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 bindsym $mod+b exec blueman-manager
 bindsym $mod+Shift+z exec zathura
 bindsym $mod+Ctrl+h exec "termite -e htop"
-bindsym $mod+Ctrl+a exec anki
 # Start Applications default config
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F3 exec pcmanfm
