@@ -142,6 +142,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Exec Used Applications
 
 bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec --no-startup-id termite --role "floating_termite"
 bindsym $mod+q kill
 bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
 bindsym $mod+Shift+d exec --no-startup-id dmenu_recency
@@ -244,7 +245,7 @@ exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id clipit
 # exec --no-startup-id volumeicon
 exec --no-startup-id blueman-applet
-exec --no-startup-id start_conky_maia
+exec --no-startup-id "conky -c /home/arianna/.conky/conky_maia"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_anne_lister"
 # adjust screen brightness
 exec --no-startup-id /home/arianna/.local/bin/brightness_toggle2
@@ -290,6 +291,7 @@ for_window [class="Telegram"] floating enable, move to absolute position 24 x 27
 for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] floating enable, move absolute position 10 10, resize set 640 480
 for_window [class="Blueman-manager"] floating enable 
 for_window [title="htop"] floating enable, move position 550 200, resize set 840 680
+for_window [window_role="floating_termite"] floating enable resize set 640 x 480
 
 # Multiple Monitors Settings
 
@@ -338,7 +340,6 @@ font pango: RobotoMono Nerd Font Regular 10
 # i3blocks
 bar {
 	status_command i3blocks
-	#status_command i3status
 	output primary
 	position top
 	separator_symbol "|"
