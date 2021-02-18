@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 # colors
 white="#D8DEE9"
 blue="#5E81AC"
@@ -7,7 +7,7 @@ background="#3B4252"
 date=$(date +%H)
 date2=$(date "+%a %e %b %H:%M")
 #
-if [[ 6 -le $date && $date -lt 18 ]]
+if [[ 06 -le $date && $date -lt 18 ]]
 then
     echo  "   $date2 "
     echo  "   $date2 "

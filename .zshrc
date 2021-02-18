@@ -27,6 +27,7 @@ alias unipicker='unipicker --command fzf'
 alias tetris='tetris --start-level 1'
 alias trans='trans -s en -t en+it'
 alias latexmk='f() { latexmk -pvc "$1" && latexmk -c "$1" };f'
+alias unimkdir='f() { mkdir "$1" && cd "$1" && mkdir riassunti && mkdir libri && mkdir esercizi && cd .. };f'
 alias stopwatch='date1=`date +%s`; while true; do echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; sleep 60; done'
 # Configuring $PATH
 path=("/usr/local/texlive/2020/bin/x86_64-linux" "$path[@]")

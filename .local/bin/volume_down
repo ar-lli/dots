@@ -17,7 +17,7 @@ and inizialize Sink
 regex = '.*\*.*([0-9]+).*'
 Sink = re.search(regex, List).group(1)
 
-os.system('pactl set-sink-volume ' + Sink + ' -5%')
+os.system('pactl set-sink-volume ' + Sink + ' -10%')
 
 
 
