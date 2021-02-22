@@ -11,7 +11,7 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 ## Aliases
-alias ls='ls --color=always'
+alias ls='ls --color=always -1 --group-directories-first' 
 alias l='ls'
 alias la='ls -a'
 alias ..='cd ..'
