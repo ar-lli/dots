@@ -29,7 +29,7 @@ set default-bg \#2E3440
 
 ### guioptions Shows or hide certain GUI elements
 ### Character Description -- c Always show the command line, even when empty s Statusbar
-set guioptions c
+set guioptions s
 
 ### inputbar-bg Defines the background color for the inputbar
 set inputbar-bg \#2E3440

@@ -23,8 +23,9 @@ filetype plugin indent on
 " FOLDING
 set foldmethod=manual
 " automatic folding and load folder
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview
+nnoremap <Leader>mk :mkview<CR>
 
 """"""""""""""""""""""""""""""
 " LIGHTLINE settings
@@ -84,6 +85,9 @@ vnoremap <M-Up> :m '<-2<CR>gv=gv
 
 " MAP UNJOIN LINE
 :noremap <C-j> i <CR> <ESC> d0 k$
+
+" MAP :ter command
+nnoremap <Leader>t :ter<CR>
 
 " REMAP <ESC> KEY IN INSERT MODE
 :inoremap jk <ESC>
@@ -232,6 +236,7 @@ let execstr="!zathura --synctex-forward " . linenumber . ":" . colnumber . ":" .
 exec execstr 
 endfunction
 nmap :call SyncTexForward()
+nnoremap <Leader>lav :call SyncTexForward()<CR>
 
 
 " COLORSCHEME
