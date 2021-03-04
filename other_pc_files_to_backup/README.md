@@ -6,3 +6,8 @@ These files are stored in directory /etc/X11/xorg.conf.d
 
 ---------------
 
+These files are stored in directory /etc/
+
+tlp.conf
+
+---------------
