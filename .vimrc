@@ -1,72 +1,66 @@
-" GENERAL
+" ▲ GENERAL
 set mouse=a
 set number
-set relativenumber " Show rel. num-
-set wrap	" Wrap lines
-set linebreak	" Break lines at word (requires Wrap lines)
-set showmatch	" Highlight matching brace
- 
-set hlsearch	" Highlight all search results
-set smartcase	" Enable smart-case search
-set ignorecase	" Always case-insensitive
-set incsearch	" Searches for strings incrementally
+set relativenumber " Show rel. number
+set wrap	   " Wrap lines
+set linebreak	   " Break lines at word (requires Wrap lines)
+set showmatch	   " Highlight matching brace
+                    
+set hlsearch	   " Highlight all search results
+set smartcase	   " Enable smart-case search
+set ignorecase	   " Always case-insensitive
+set incsearch	   " Searches for strings incrementally
 
-" INDENTATIONS
+" ▲ INDENTATIONS
 set tabstop=8 
 set softtabstop=4 
 set shiftwidth=4 
 set noexpandtab
 
-" ENABLE FILETYPE VIMRC
+" ▲ ENABLE FILETYPE VIMRC
 filetype plugin indent on
 
-" FOLDING
+" ▲ FOLDING
 set foldmethod=manual
-" automatic folding and load folder
-" autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent loadview
-nnoremap <Leader>mk :mkview<CR>
+" autocmd BufWinLeave * mkview          " automatic folding
+autocmd BufWinEnter * silent loadview	" automatic load folder
+nnoremap <Leader>mk :mkview<CR>	        " map to fold file
 
-""""""""""""""""""""""""""""""
-" LIGHTLINE settings
+" ▲ LIGHTLINE SETTINGS
 set laststatus=2  " show bar
 set noshowmode	" not show current mode
 let g:lightline = {
   \ 'colorscheme': 'nord',
   \ }
 
-" ADVANCED
-set ruler	" Show row and column ruler information
- 
-set undolevels=1000	" Number of undo levels
+" ▲ ADVANCED
+set ruler	                " Show row and column ruler information
+                                 
+set undolevels=1000	        " Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-set ttimeoutlen=50    " adjust delay between passing from normal to insert mode
-"""
-" MAPS
+set ttimeoutlen=50              " adjust delay between passing from normal to insert mode
 
-" VISUAL-BLOCK remap su <Alt-v>
-:noremap <C-q> <C-v>
+" ▲ MAPS
 
-" COPY AND PASTE
-" Copy and paste using global clipboard
-:noremap <C-c> "+y
-:noremap <C-v> "+p
-":noremap <C-x> "+d
+" ■ VISUAL-BLOCK REMAP ON <ALT-v>
+noremap <C-q> <C-v>
+
+" ■ COPY AND PASTE
+" Copy and Paste using global clipboard
+noremap <C-c> "+y
+noremap <C-v> "+p
 " Paste from 0 register
 " That not allow to delete text to be pasted
-:noremap <Leader>p "0p
+noremap <Leader>p "0p 
+" Copy entire line without newline character
+noremap Y ^y$
 
-" MOVEMENT
+" ■ MOVEMENT
 " moving down and up by screen lines
-:noremap <Up> gk
-:noremap! <Up> <C-O>gk
-:noremap <Down> gj
-:noremap! <Down> <C-O>gj
-" the following are optional, to move by file lines using Alt-arrows
-:noremap! <M-Up> <Up>
-:noremap! <M-Down> <Down>
-:noremap <M-Up> k
-:noremap <M-Down> j
+noremap <Up> gk
+noremap! <Up> <C-O>gk
+noremap <Down> gj
+noremap! <Down> <C-O>gj
 " swapping lines
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
@@ -83,18 +77,19 @@ inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
 
-" MAP UNJOIN LINE
-:noremap <C-j> i <CR> <ESC> d0 k$
+" ■ MAP UNJOIN LINE
+noremap <C-j> i <CR> <ESC> d0 k_
 
-" MAP :ter command
+" ■ MAP :ter COMMAND
 nnoremap <Leader>t :ter<CR>
 
-" REMAP <ESC> KEY IN INSERT MODE
-:inoremap jk <ESC>
+" ■ MAP :reg COMMAND
+nnoremap <Leader>r :reg<CR>
 
-" .............................................................................
-" lambdalisue/fern.vim
-" .............................................................................
+" ■ REMAP <ESC> KEY IN INSERT MODE
+inoremap jk <ESC>
+
+" ▲ FERN PLUGIN
 " Disable netrw.
 let g:loaded_netrw  = 1
 let g:loaded_netrwPlugin = 1
@@ -154,37 +149,13 @@ augroup FernGroup
   autocmd FileType fern call FernInit()
 augroup END
 
-
-" VIM-PLUG & SIMILAR
+" ▲ VIM-PLUG & SIMILAR
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" VIMTEX plugin
-" All edits are taken from https://castel.dev/post/lecture-notes-1/
-" Plug 'lervag/vimtex'
-" let g:tex_flavor = 'latex'
-" let g:vimtex_view_method = 'zathura'
-" let g:vimtex_quickfix_mode = 0
-" let g:latex_indent_enabled = 0
-" let g:vimtex_indent_ignored_envs = ['document', 'itemize', 'enumerate', 'displaymath']
-" let g:vimtex_compiler_latexmk = { 
-"         \ 'executable' : 'latexmk',
-"         \ 'options' : [ 
-"         \   '-xelatex',
-"         \   '-file-line-error',
-"         \   '-synctex=1',
-"         \   '-interaction=nonstopmode',
-"         \ ],
-"         \}
-
-" TEXCONCEAL plugin
-" Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-" set conceallevel=1
-" let g:tex_conceal='abdmg'
-
-" ULTISNIPS plugin 
+" ■ ULTISNIPS plugin 
 " All edits are taken from https://castel.dev/post/lecture-notes-1/
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -207,26 +178,26 @@ let g:lightline = {
     \ },
     \ }
 
-" COMMENTARY.VIM plugin
+" ■ COMMENTARY.VIM plugin
 Plug 'tpope/vim-commentary'
 
-" SURROUND.VIM plugin
+" ■ SURROUND.VIM plugin
 Plug 'tpope/vim-surround'
 "
-" VIM MULTIPLE CURSOR plugin
+" ■ VIM MULTIPLE CURSOR plugin
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" FERN VIM FILESYSTEM plugin
+" ■ FERN VIM FILESYSTEM plugin
 Plug 'lambdalisue/fern.vim'
 
 call plug#end()
 
-" Octave syntax
+" ▲ OCTAVE SYNTAX
 augroup filetypedetect
-  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+au! BufRead,BufNewFile *.m,*.oct set filetype=octave
 augroup END
-"""
-" Set forward latex search
+
+" ▲ SET FORWARD LATEX SEARCH
 function! SyncTexForward()
 let linenumber=line(".")
 let colnumber=col(".")
@@ -238,11 +209,10 @@ endfunction
 nmap :call SyncTexForward()
 nnoremap <Leader>lav :call SyncTexForward()<CR>
 
-
-" COLORSCHEME
+" ▲ COLORSCHEME
 " nord
 colorscheme nord
 
-" MACRO
+" ▲ MACRO
 " Macro che automatizza l'editing del file della musica
 let @m = '$F-dt.j'

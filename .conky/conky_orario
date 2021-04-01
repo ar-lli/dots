@@ -1,0 +1,34 @@
+conky.config = {
+	alignment = 'top_left',
+	background = true,
+	color2 = '1A2833',
+	cpu_avg_samples = 2,
+	default_color = '04608F',
+	double_buffer = true,
+	font = 'RobotoMono Nerd Font:style=Regular:size=8',
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+conky.text = [[
+
++-------+--------+-------+--------+---------+-------+
+|       | Mon    | Tue   | Wed    | Thu     | Fri   |
++-------+--------+-------+--------+---------+-------+
+| 09-11 | TdG    | Stat  |        |         | Stat  |
++-------+--------+-------+--------+---------+-------+
+| 11-13 | IAnNum |  MR   | IAnNum |         |       |
++-------+--------+-------+--------+---------+-------+
+| 14-16 |        |       |        | IAnNum  |   MR  |
++-------+--------+-------+--------+---------+-------+
+| 16-18 |        | TdG   |  MR    |         |       |
++-------+--------+-------+--------+---------+-------+
+]]
+

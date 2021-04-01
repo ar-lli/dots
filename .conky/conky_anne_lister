@@ -2,7 +2,7 @@ conky.config = {
 	alignment = 'bottom_left',
 	background = true,
 	color2 = '2ECC71',
-	default_color = 'BBD4A6',
+	default_color = '026692',
 	double_buffer = true,
 	font = 'Lister Crypt:size=10',
 	gap_x = 25,

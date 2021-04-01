@@ -1,6 +1,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Modifier
+# ▲ MODIFIER
 
 # Default
 set $mod Mod4
@@ -18,7 +18,7 @@ focus_on_window_activation urgent
 no_focus [class="Zathura"]
 no_focus [class="Octave"]
 
-# Basics
+# ▲ BASICS
 
 # Change Focus, Orientation, Containers Styles, Etc..:
 # change focus
@@ -130,9 +130,10 @@ mode "$mode_system" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# Exec Used Applications
+# ▲ EXEC USED APPLICATIONS
 
 bindsym $mod+Return exec termite
+bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Shift+Return exec --no-startup-id termite --role "floating_termite"
 bindsym $mod+q kill
 bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
@@ -142,7 +143,7 @@ bindsym $mod+Shift+F1 exec pcmanfm
 bindsym $mod+F2 exec firefox
 bindsym $mod+Shift+F2 exec chromium
 bindsym $mod+F3 exec telegram-desktop
-bindsym $mod+F4 "workspace 4; exec termite -e cmus"
+bindsym $mod+F4 "workspace 5; exec termite -e cmus"
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+Ctrl+u exec "$HOME/.local/bin/script_unipicker"
 bindsym $mod+Ctrl+v exec "rofi-vim -rvim"
@@ -151,6 +152,7 @@ bindsym $mod+Ctrl+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 bindsym $mod+Ctrl+b exec blueman-manager
 bindsym $mod+Shift+z exec zathura
 bindsym $mod+Ctrl+h exec "termite -e htop"
+bindsym $mod+Ctrl+o exec "$HOME/.local/bin/show_timetable.sh"
 # Start Applications default config
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F3 exec pcmanfm
@@ -162,7 +164,7 @@ bindsym $mod+Ctrl+h exec "termite -e htop"
 #bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 #bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# Resize Window
+# ▲ RESIZE WINDOW
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -200,7 +202,7 @@ bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
 for_window [class="Blueman-manager"] resize set 640 480
 for_window [class="Blueman-manager"] move absolute position center
 
-# Volume, Audio controls, Screenshoot, Brightness
+# ▲ VOLUME, AUDIO CONTROLS, SCREENSHOOT, BRIGHTNESS
 
 # volume controls
 bindsym XF86AudioRaiseVolume exec "volume_up"
@@ -226,7 +228,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # Brightness Controls
 bindsym $mod+ctrl+l exec "brightness_toggle2"
 
-# Autostart Applications
+# ▲ AUTOSTART APPLICATIONS
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id manjaro-hello
@@ -239,6 +241,7 @@ exec --no-startup-id blueman-applet
 # exec --no-startup-id "conky -c /home/arianna/.conky/conky_maia"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_anne_lister"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_orario"
+exec --no-startup-id "conky -c /home/arianna/.conky/conky_to_do"
 # adjust screen brightness
 exec --no-startup-id /home/arianna/.local/bin/brightness_toggle2
 # clear screenshots directory in ~
@@ -250,7 +253,7 @@ exec_always --no-startup-id fix_xcursor
 # launch polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Floating Mode
+# ▲ FLOATING MODE
 
 # Open specific applications in floating mode
 for_window [class="calamares"] floating enable border normal
@@ -284,20 +287,21 @@ for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] floating ena
 for_window [class="Blueman-manager"] floating enable 
 for_window [title="htop"] floating enable, move position 550 200, resize set 840 680
 for_window [window_role="floating_termite"] floating enable resize set 640 x 480
+for_window [title="Add"] floating enable, resize set 840 680
 
-# Multiple Monitors Settings
+# ▲ MULTIPLE MONITORS SETTINGS
 
 workspace 1 output eDP
 workspace 2 output eDP
-workspace 3 output HDMI-A-0
-workspace 4 output eDP
+workspace 3 output eDP
+workspace 4 output HDMI-A-0
 workspace 5 output HDMI-A-0
 workspace 6 output HDMI-A-0
 
 #set up dual monitor settings
 exec --no-startup-id /home/arianna/.local/bin/set_up_dual_monitor
 
-# Vim-Marks
+# ▲ VIM-MARKS
 
 # Mark Windows
 # read 1 character and mark the current window with this character
@@ -311,7 +315,7 @@ bindsym $mod+x exec i3-input -F 'unmark %s' -l 1 -P 'Remove: '
 
 show_marks yes
 
-# Scratchpad
+# ▲ SCRATCHPAD
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -319,7 +323,7 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Appearance & Bar
+# ▲ APPEARANCE & BAR
 
 # Font
 font pango: RobotoMono Nerd Font Regular 10
@@ -339,10 +343,16 @@ bar {
 	strip_workspace_numbers yes
 	font pango: RobotoMono Nerd Font Regular 10
 	colors {
-		background #3b4252ff
+		## DEFAULT NORD
+		# background #3b4252ff
 		#separator #81a1c1
-		focused_workspace #a3be8c #3b4252 #a3be8c
-		inactive_workspace #3b4252 #3b4252 #ebcb8b
+		# focused_workspace #a3be8c #3b4252 #a3be8c
+		# inactive_workspace #3b4252 #3b4252 #ebcb8b
+		# urgent_workspace #81a1c1 #bf616a #e5e9f0
+		## DARKER NORD
+		background #0f0f0fff
+		focused_workspace #a3be8c #0f0f0f #a3be8c
+		inactive_workspace #0f0f0f #0f0f0f #ebcb8b
 		urgent_workspace #81a1c1 #bf616a #e5e9f0
 	}
   }
@@ -358,10 +368,16 @@ bar {
 #	font pango:SauceCodeProNerd Font Bold 8
 	font pango: RobotoMono Nerd Font Regular 10
 	colors {
-		background #3b4252ff
+		## DEFAULT NORD
+		# background #3b4252ff
 		#separator #81a1c1
-		focused_workspace #81a1c1 #3b4252 #a3be8c
-		inactive_workspace #81a1c1 #3b4252 #d08770
+		# focused_workspace #81a1c1 #3b4252 #a3be8c
+		# inactive_workspace #81a1c1 #3b4252 #d08770
+		# urgent_workspace #81a1c1 #bf616a #e5e9f0
+		## DARKER NORD
+		background #0f0f0fff
+		focused_workspace #a3be8c #0f0f0f #a3be8c
+		inactive_workspace #0f0f0f #0f0f0f #ebcb8b
 		urgent_workspace #81a1c1 #bf616a #e5e9f0
 	}
 }

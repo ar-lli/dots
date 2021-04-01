@@ -1,0 +1,34 @@
+From github site
+…or create a new repository on the command line
+
+echo "# dots" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin REPOSITORY_URL
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin REPOSITORY_URL
+git branch -M main
+git push -u origin main
+
+------
+Once a directory is created...
+
+Edit folder: <edited_folder>
+
+git add <edited_folder>
+git -m commit "some updates"
+git push origin main
+
+Remove directory from git and local
+
+git rm -r one-of-the-directories // This deletes from filesystem
+git commit -m "Remove duplicated directory"
+git push origin <your-git-branch> // In my case <yout-git-branch> is main
+
+Remove directory from git and local
+git rm -r --cached myFolder
