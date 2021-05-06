@@ -19,5 +19,5 @@ for i in songs:
     Title = '"{}"'.format(Title)
     j = '"{}"'.format(i)
     w = '"{}"'.format(z)
-    os.system("id3v2 -t " + Title + " -T " + w + " -a " + Artist + " -y " + year + " -A " + Album + " " + j )
+    os.system("mid3v2 -t " + Title + " -T " + w + " -a " + Artist + " -y " + year + " -A " + Album + " " + j )
     z = z + 1

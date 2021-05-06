@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,drun,run,ssh";
+	modi: "drun,file-browser-extended";
 	width: 50;
 	lines: 15;
 	columns: 1;
@@ -11,8 +11,9 @@ configuration {
 	xoffset: 0;
 	fixed-num-lines: true;
 	show-icons: true;
-	drun-icon-theme: "Papirus-Dark";
+	icon-theme: "/home/arianna/.icons/Papirus-Dark";
 	terminal: "rofi-sensible-terminal";
+	display-file-browser-extended: "files";
 	click-to-exit: true;
 	theme: "/home/arianna/.config/rofi/nord.rasi";
 }
