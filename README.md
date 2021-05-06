@@ -1,1 +1,1 @@
-Dots files collections
+Dots files collection
