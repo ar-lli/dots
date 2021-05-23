@@ -1,2 +1,1 @@
-#!/bin/bash
-unipicker --command "rofi -dmenu" --copy-command "xclip -selection clipboard"
+rofi/script_unipicker

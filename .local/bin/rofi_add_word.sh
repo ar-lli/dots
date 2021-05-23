@@ -1,3 +1,1 @@
-#!/bin/bash
-cat /home/arianna/.words.txt
-echo $1 >> .words.txt
+rofi/rofi_add_word.sh

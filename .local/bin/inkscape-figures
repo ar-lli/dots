@@ -1,4 +1,1 @@
-#!/usr/bin/python
-
-from inkscapefigures import cli
-cli()
+utility/inkscape-figures

@@ -5,26 +5,24 @@ set relativenumber " Show rel. number
 set wrap	   " Wrap lines
 set linebreak	   " Break lines at word (requires Wrap lines)
 set showmatch	   " Highlight matching brace
-                    
+"                   
 set hlsearch	   " Highlight all search results
 set smartcase	   " Enable smart-case search
-set ignorecase	   " Always case-insensitive
+set noignorecase   " Always case-sensitive
 set incsearch	   " Searches for strings incrementally
+"
+set nosplitbelow   "Open new split panes above
+set splitright	   " Open new split panes right
 
-" ▲ INDENTATIONS
-set tabstop=8 
-set softtabstop=4 
-set shiftwidth=4 
-set noexpandtab
-
-" ▲ ENABLE FILETYPE VIMRC
+" ▲ ENABLE FILETYPE, INDENT, AND DETECTION
 filetype plugin indent on
+" Set LaTeX as first choice when *.tex file is detected
+let g:tex_flavor = "latex"
 
 " ▲ FOLDING
 set foldmethod=manual
-" autocmd BufWinLeave * mkview          " automatic folding
-autocmd BufWinEnter * silent loadview	" automatic load folder
-nnoremap <Leader>mk :mkview<CR>	        " map to fold file
+autocmd BufWinLeave ?* mkview                  " automatic folding
+autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
 
 " ▲ LIGHTLINE SETTINGS
 set laststatus=2  " show bar
@@ -38,11 +36,16 @@ set ruler	                " Show row and column ruler information
                                  
 set undolevels=1000	        " Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-set ttimeoutlen=50              " adjust delay between passing from normal to insert mode
+set ttimeoutlen=50              " Adjust delay between passing from normal to insert mode
+set timeoutlen=1000		" Adjust mappings delay
+set showcmd			" Show leader key in the bottom right corner for the duration of the timeout
 
 " ▲ MAPS
+" 
+"■ DEFINE <LEADER> KEY
+let mapleader = "\<tab>"	"map leader key to Tab
 
-" ■ VISUAL-BLOCK REMAP ON <ALT-v>
+" ■ VISUAL-BLOCK REMAP ON <CTRL-v>
 noremap <C-q> <C-v>
 
 " ■ COPY AND PASTE
@@ -54,14 +57,16 @@ noremap <C-v> "+p
 noremap <Leader>p "0p 
 " Copy entire line without newline character
 noremap Y ^y$
+" Delete entire line without newline character
+noremap D ^d$
 
 " ■ MOVEMENT
-" moving down and up by screen lines
+" Moving down and up by screen lines
 noremap <Up> gk
 noremap! <Up> <C-O>gk
 noremap <Down> gj
 noremap! <Down> <C-O>gj
-" swapping lines
+" Swapping lines
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 nnoremap <M-j> :m .+1<CR>==
@@ -77,18 +82,43 @@ inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
 
-" ■ MAP UNJOIN LINE
-noremap <C-j> i <CR> <ESC> d0 k_
-
-" ■ MAP :ter COMMAND
-nnoremap <Leader>t :ter<CR>
-
-" ■ MAP :reg COMMAND
-nnoremap <Leader>r :reg<CR>
-
 " ■ REMAP <ESC> KEY IN INSERT MODE
 inoremap jk <ESC>
 
+" ■ MAP UNJOIN LINE
+noremap <C-j> i <CR> <ESC> d0 k_
+
+" ■ MAP USEFUL COMMANDS
+" Map :buffers command
+nnoremap <Leader>b :buffers<CR>
+" Map :ju[mps] command
+nnoremap <Leader>j :jumps<CR>
+" Map :noh command
+nnoremap <Leader>n :noh<CR>
+" Map :reg command
+nnoremap <Leader>r :reg<CR>
+" Map :ter command
+nnoremap <Leader>t :silent! ter<CR>
+" Map :updates command
+nnoremap <Leader>u :update<CR>
+" Map :w !sudo tee % command
+nnoremap :w!! :w !sudo tee %<CR>
+
+" ■ MAP WINDOWS
+" Map windows related keys
+nnoremap <Leader>w <C-W>
+" Map windows related keys
+nnoremap <Leader>w+ :resize +10<CR>
+" Map windows related keys
+nnoremap <Leader>w- :resize -10<CR>
+" Map windows related keys
+nnoremap <Leader>w> :vertical results +10<CR>
+" Map windows related keys
+nnoremap <Leader>w< :vertical results -10<CR>
+"
+
+" ▲ PLUGIN
+"
 " ▲ FERN PLUGIN
 " Disable netrw.
 let g:loaded_netrw  = 1
@@ -180,9 +210,10 @@ let g:lightline = {
 
 " ■ COMMENTARY.VIM plugin
 Plug 'tpope/vim-commentary'
+autocmd FileType octave setlocal commentstring=#\ %s
 
 " ■ SURROUND.VIM plugin
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 "
 " ■ VIM MULTIPLE CURSOR plugin
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}

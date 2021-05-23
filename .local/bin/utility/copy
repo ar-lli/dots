@@ -1,0 +1,4 @@
+#!/bin/bash
+folder=$(pwd)
+name="${folder}"/"${1}"
+cat $name | xclip -selection clipboard

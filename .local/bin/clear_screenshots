@@ -1,2 +1,1 @@
-#!/bin/bash
-rm /home/arianna/screenshots/*
+utility/clear_screenshots

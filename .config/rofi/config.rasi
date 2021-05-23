@@ -16,4 +16,6 @@ configuration {
 	display-file-browser-extended: "files";
 	click-to-exit: true;
 	theme: "/home/arianna/.config/rofi/nord.rasi";
+	kb-row-tab: "Control+Tab";
+	kb-mode-next: "Tab";
 }

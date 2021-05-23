@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DISPLAY=$(cat /home/arianna/.cache/cmuscheat.txt)
+echo """$DISPLAY"""
