@@ -1,18 +1,21 @@
-## Completion
-autoload -Uz compinit
-compinit
+# Completion
+autoload -Uz compinit && compinit
+# completion menu
 zstyle ':completion:*' menu select
+# partial completion suggestions
+zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
 #
 #
-## History search
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+# History search
+# autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
+# [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 #
 #
 ## Aliases
+#
 alias ls='ls --color=always -1 --group-directories-first' 
 alias l='ls'
 alias la='ls -a'
@@ -40,8 +43,10 @@ export MANPATH
 infopath=("/usr/local/texlive/2020/texmf-dist/doc/info" "$infopath[@]")
 export INFOPATH
 #
+# END
 #
 ## Themes
+#
 autoload -Uz promptinit
 promptinit
 fpath=("$HOME/.zprompts" "$fpath[@]")
@@ -54,12 +59,39 @@ LS_COLORS='rs=0:di=01;34:ln=01;35:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 zle_highlight=(default:bold)
 #
+# END
+#
+## Keybindings section
+#
+bindkey -e
+#
+bindkey '^[[H' beginning-of-line                                # Home key
+bindkey '^[[F' end-of-line                                     # End key
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C' forward-char                                    # Right key
+bindkey '^[[D' backward-char                                   # Left key
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+##
+## Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+# bindkey '^[[Z' undo                                             # Shift+tab undo last action
+#
+# END
 #
 ## Plugins
+#
 # zsh-autosuggestions
+# autoload -Uz zpty
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4C566A"
+# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 #
 # zsh-history-substring-search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -68,69 +100,39 @@ HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=500
 #
+# # zsh-vi-mode
+# source /home/arianna/.config/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
+# # Only changing the escape key to `jk` in insert mode, we still
+# # keep using the default keybindings `^[` in other modes
+# ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+# # Set the command line initial mode
+# ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+# # The plugin will auto execute this zvm_after_select_vi_mode function
+# function zvm_after_select_vi_mode() {
+#   case $ZVM_MODE in
+#     $ZVM_MODE_NORMAL)
+# 	ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_USER_DEFAULT
+# 	echo -ne "\033]12;#81a1c1\007"
+#     ;;
+#     $ZVM_MODE_INSERT)
+# 	ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_USER_DEFAULT     
+# 	echo -ne "\033]12;#e5e9f0\007"
+#     ;;
+#     $ZVM_MODE_VISUAL)
+# 	ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BEAM	 
+# 	ZVM_VI_HIGHLIGHT_BACKGROUND=#a3be8c
+#     ;;
+#     $ZVM_MODE_VISUAL_LINE)
+# 	ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BEAM
+# 	ZVM_VI_HIGHLIGHT_BACKGROUND=#a3be8c
+#     ;;
+#     $ZVM_MODE_REPLACE)
+# 	ZVM_REPLACE_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+#     ;;
+#   esac
+# }
+#
 # zsh-syntax-hightlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
-# zsh-vi-mode
-source /home/arianna/.config/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
-# Only changing the escape key to `jk` in insert mode, we still
-# keep using the default keybindings `^[` in other modes
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-# Set the command line initial mode
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-# The plugin will auto execute this zvm_after_select_vi_mode function
-function zvm_after_select_vi_mode() {
-  case $ZVM_MODE in
-    $ZVM_MODE_NORMAL)
-	ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_USER_DEFAULT
-	echo -ne "\033]12;#81a1c1\007"
-    ;;
-    $ZVM_MODE_INSERT)
-	ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_USER_DEFAULT     
-	echo -ne "\033]12;#e5e9f0\007"
-    ;;
-    $ZVM_MODE_VISUAL)
-	ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BEAM	 
-	ZVM_VI_HIGHLIGHT_BACKGROUND=#a3be8c
-    ;;
-    $ZVM_MODE_VISUAL_LINE)
-	ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BEAM
-	ZVM_VI_HIGHLIGHT_BACKGROUND=#a3be8c
-    ;;
-    $ZVM_MODE_REPLACE)
-	ZVM_REPLACE_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
-    ;;
-  esac
-}
-#
 # END
-#
-### Keybindings section
-#bindkey -e
-#bindkey '^[[7~' beginning-of-line                               # Home key
-#bindkey '^[[H' beginning-of-line                                # Home key
-#if [[ "${terminfo[khome]}" != "" ]]; then
-#  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
-#fi
-#bindkey '^[[8~' end-of-line                                     # End key
-#bindkey '^[[F' end-of-line                                     # End key
-#if [[ "${terminfo[kend]}" != "" ]]; then
-#  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
-#fi
-#bindkey '^[[2~' overwrite-mode                                  # Insert key
-#bindkey '^[[3~' delete-char                                     # Delete key
-#bindkey '^[[C'  forward-char                                    # Right key
-#bindkey '^[[D'  backward-char                                   # Left key
-#bindkey '^[[5~' history-beginning-search-backward               # Page up key
-#bindkey '^[[6~' history-beginning-search-forward                # Page down key
-##
-##
-## Navigate words with ctrl+arrow keys
-#bindkey '^[Oc' forward-word                                     #
-#bindkey '^[Od' backward-word                                    #
-#bindkey '^[[1;5D' backward-word                                 #
-#bindkey '^[[1;5C' forward-word                                  #
-#bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
-#bindkey '^[[Z' undo                                             # Shift+tab undo last action
-##
-## END
