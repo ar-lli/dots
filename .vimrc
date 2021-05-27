@@ -36,7 +36,8 @@ set ruler	                " Show row and column ruler information
                                  
 set undolevels=1000	        " Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-set ttimeoutlen=50              " Adjust delay between passing from normal to insert mode
+set timeout ttimeout
+set ttimeoutlen=10              " Adjust delay between passing from normal to insert mode
 set timeoutlen=1000		" Adjust mappings delay
 set showcmd			" Show leader key in the bottom right corner for the duration of the timeout
 
@@ -61,11 +62,14 @@ noremap Y ^y$
 noremap D ^d$
 
 " ■ MOVEMENT
+" Remap k and j as jumps
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'gk'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'gj'
 " Moving down and up by screen lines
 noremap <Up> gk
-noremap! <Up> <C-O>gk
 noremap <Down> gj
-noremap! <Down> <C-O>gj
+"noremap! <Up> <C-O>gk
+"noremap! <Down> <C-O>gj
 " Swapping lines
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
@@ -82,17 +86,22 @@ inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
 
+" ■ REMAP <C-i> TO <C-j>
+noremap <C-j> <C-i>
+
 " ■ REMAP <ESC> KEY IN INSERT MODE
 inoremap jk <ESC>
 
 " ■ MAP UNJOIN LINE
-noremap <C-j> i <CR> <ESC> d0 k_
+noremap <M-j> i <CR> <ESC> d0 k_
 
 " ■ MAP USEFUL COMMANDS
 " Map :buffers command
 nnoremap <Leader>b :buffers<CR>
 " Map :ju[mps] command
 nnoremap <Leader>j :jumps<CR>
+" Map :changes command
+nnoremap <Leader>c :changes<CR>
 " Map :noh command
 nnoremap <Leader>n :noh<CR>
 " Map :reg command
@@ -108,82 +117,21 @@ nnoremap :w!! :w !sudo tee %<CR>
 " Map windows related keys
 nnoremap <Leader>w <C-W>
 " Map windows related keys
-nnoremap <Leader>w+ :resize +10<CR>
+nnoremap <Leader>w+ :resize +5<CR>
 " Map windows related keys
-nnoremap <Leader>w- :resize -10<CR>
+nnoremap <Leader>w- :resize -5<CR>
 " Map windows related keys
-nnoremap <Leader>w> :vertical results +10<CR>
+nnoremap <Leader>w> :vertical resize +10<CR>
 " Map windows related keys
-nnoremap <Leader>w< :vertical results -10<CR>
+nnoremap <Leader>w< :vertical resize -10<CR>
 "
 
 " ▲ PLUGIN
-"
-" ▲ FERN PLUGIN
-" Disable netrw.
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
-
-
-augroup my-fern-hijack
-  autocmd!
-  autocmd BufEnter * ++nested call s:hijack_directory()
-augroup END
-
-
-function! s:hijack_directory() abort
-  let path = expand('%:p')
-  if !isdirectory(path)
-    return
-  endif
-  bwipeout %
-  execute printf('Fern %s', fnameescape(path))
-endfunction
-
-
-" Custom settings and mappings.
-let g:fern#disable_default_mappings = 1
-
-
-noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
-
-
-function! FernInit() abort
-  nmap <buffer><expr>
-        \ <Plug>(fern-my-open-expand-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action-open:select)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
-  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> n <Plug>(fern-action-new-path)
-  nmap <buffer> d <Plug>(fern-action-remove)
-  nmap <buffer> m <Plug>(fern-action-move)
-  nmap <buffer> M <Plug>(fern-action-rename)
-  nmap <buffer> h <Plug>(fern-action-hidden-toggle)
-  nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> k <Plug>(fern-action-mark-toggle)
-  nmap <buffer> b <Plug>(fern-action-open:split)
-  nmap <buffer> v <Plug>(fern-action-open:vsplit)
-  nmap <buffer><nowait> < <Plug>(fern-action-leave)
-  nmap <buffer><nowait> > <Plug>(fern-action-enter)
-endfunction
-
-
-augroup FernGroup
-  autocmd!
-  autocmd FileType fern call FernInit()
-augroup END
-
 " ▲ VIM-PLUG & SIMILAR
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+ call plug#begin('~/.vim/plugged')
 
 " ■ ULTISNIPS plugin 
 " All edits are taken from https://castel.dev/post/lecture-notes-1/
@@ -212,16 +160,10 @@ let g:lightline = {
 Plug 'tpope/vim-commentary'
 autocmd FileType octave setlocal commentstring=#\ %s
 
-" ■ SURROUND.VIM plugin
-"Plug 'tpope/vim-surround'
-"
 " ■ VIM MULTIPLE CURSOR plugin
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" ■ FERN VIM FILESYSTEM plugin
-Plug 'lambdalisue/fern.vim'
-
-call plug#end()
+ call plug#end()
 
 " ▲ OCTAVE SYNTAX
 augroup filetypedetect

@@ -345,7 +345,8 @@ bar {
 	separator_symbol "|"
 	workspace_buttons yes
 	strip_workspace_numbers yes
-	font pango: RobotoMono Nerd Font Regular 10
+	# font pango: RobotoMono Nerd Font Regular 10
+	font pango: Hasklug Nerd Font 10
 	colors {
 		## DEFAULT NORD
 		background #3b4252ff
@@ -369,8 +370,8 @@ bar {
 	separator_symbol "~|~"
 	status_command i3status --config ~/.i3status_small.conf
 	workspace_buttons yes
-#	font pango:SauceCodeProNerd Font Bold 8
-	font pango: RobotoMono Nerd Font Regular 10
+	# font pango: RobotoMono Nerd Font Regular 10
+	font pango: Hasklug Nerd Font 10
 	colors {
 		## DEFAULT NORD
 		background #3b4252ff
@@ -395,10 +396,21 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 # Windows
 
-for_window [class=".*"] border pixel 2.5
+for_window [class=".*"] border pixel 3
+# NORD 1
+# # class                 border  backgr. text    indicator child_border
+# client.focused          #a3be8c #a3be8c #2e3440 #bf616a   #a3be8c
+# client.focused_inactive #81a1c1 #81a1c1 #2e3440 #484e50   #81a1c1
+# client.unfocused        #e5e9f0 #e5e9f0 #2e3440 #292d2e   #e5e9f0
+# client.urgent           #2f343a #bf616a #eceff4 #bf616a   #bf616a
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# client.background       #eceff4
+#
+# NORD 2
 # class                 border  backgr. text    indicator child_border
-client.focused          #a3be8c #a3be8c #2e3440 #bf616a   #a3be8c
-client.focused_inactive #81a1c1 #81a1c1 #2e3440 #484e50   #81a1c1
+client.focused          #81a1c1 #81a1c1 #2e3440 #484e50   #81a1c1
+client.focused_inactive #b48ead #b48ead #2e3440 #bf616a   #b48ead
 client.unfocused        #e5e9f0 #e5e9f0 #2e3440 #292d2e   #e5e9f0
 client.urgent           #2f343a #bf616a #eceff4 #bf616a   #bf616a
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
