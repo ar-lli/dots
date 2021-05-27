@@ -1,0 +1,142 @@
+# GLOBAL
+:help keyword             # open help for keyword
+:e file                   # edit a file in a new buffer
+:saveas file              # save file as
+:close                    # close current pane
+
+# CURSOR MOVEMENT
+H                         # move to top of screen
+M                         # move to middle of screen
+L                         # move to bottom of screen
+5G                        # go to line 5
+}                         # jump to next paragraph (or function/block, when editing code)
+{                         # jump to previous paragraph (or function/block, when editing code)
+
+# MARKING TEXT (VISUAL MODE)
+aw                        # mark a word
+ab                        # a block with ()
+aB                        # a block with {}
+ib                        # inner block with ()
+iB                        # inner block with {}
+
+# EDITING
+s                         # delete character and substitute text
+xp                        # transpose two letters (delete and paste)
+
+# INSERT MODE
+Ctrl + h 		  # delete the character before the cursor during insert mode
+Ctrl + w 		  # delete word before the cursor during insert mode
+Ctrl + j 		  # begin new line during insert mode
+Ctrl + t 		  # indent (move right) line one shiftwidth during insert mode
+Ctrl + d 		  # de-indent (move left) line one shiftwidth during insert mode
+Ctrl + n 		  # insert (auto-complete) next match before the cursor during insert mode
+Ctrl + p 		  # insert (auto-complete) previous match before the cursor during insert mode
+Ctrl + rx 		  # insert the contents of register x 
+
+# REGISTERS
+:reg - \r 		  # show registers content
+"xy 			  # yank into register x
+"xp 			  # paste contents of register x 
+			  # Special registers
+
+0 			  # last yank
+" 			  # unnamed register, last delete or yank
+% 			  # current file name
+# 			  # alternate file name
+* 			  # clipboard contents (X11 primary)
++ 			  # clipboard contents (X11 clipboard)
+/ 			  # last search pattern
+: 			  # last command-line
+. 			  # last inserted text
+- 			  # last small (less than a line) delete
+= 			  # expression register
+_ 			  # black hole register
+
+# SEARCH
+/pattern                  # search for pattern
+?pattern                  # search backward for pattern
+\vpattern                 # 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+:%s/old/new/g             # replace all old with new throughout file
+:%s/old/new/gc            # replace all old with new throughout file with confirmations
+
+:vimgrep /pattern/ {file} # search for pattern in multiple files
+:cn                       # jump to the next match
+:cp                       # jump to the previous match
+:copen                    # open a window containing the list of matches
+
+# EXITING
+:w !sudo tee % - w!!      # write out the current file using sudo
+
+# BUFFERS TABS WINDOWS
+:badd			  # add a new buffer for a file to the buffer list without opening the file
+:bnext or :bn             # go to the next buffer
+:bprev or :bp             # go to the previous buffer
+:bd                       # delete a buffer (close a file)
+:ls or <Leader>l          # list all open buffers
+#
+:sball [N]		  # open all the buffers in the buffer list in N windows
+:tab sball [N]		  # open all the buffers in the buffer list in N tabs
+:tab sb [N]		  # open buffer N in new tab
+##
+Ctrl + ws                 # split window
+Ctrl + wc                 # close a window
+Ctrl + wv                 # split window vertically
+Ctrk + _                  # max out height
+Ctrl + |                  # max out width
+Ctrl + =                  # normalize all split sizes
+Ctrl + o                  # close all split except the current
+#
+:sb <buff_number>	  # open buffer <buff_number> in horiz split
+:vb <buff_number>	  # open all the buffers in the buffer list windows horizontally
+##
+:tabnew or :tabnew file   # open a file in a new tab
+Ctrl + wT                 # move the current split window into its own tab
+gt or :tabn		  # move to the next tab
+gT or :tabp   		  # move to the previous tab
+<number>gt                # move to tab <number>
+g<Tab>			  # Go to The last accessed page
+:tabm <number>		  # move current tab to the <number>th position (indexed from 0)
+:tabs			  # list all tabs
+:tabc		          # close the current tab and all its windows
+:tabo			  # close all tabs except for the current one
+:tabdo command            # run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+# FOLDING
+zi 			  # toggle folding functionality 
+zE			  # delete all folds (works on every level)
+zA 			  # toggle fold under cursor (works on every level)
+zC			  # close all folds (works on every level)
+zO			  # open all folds (works on every level)
+
+# MARKS AND POSITIONS
+:marks - \m  		  # list of marks
+'0       		  # go to the position where Vim was previously exited
+'"       		  # go to the position when last editing this file
+'.       		  # go to the position of the last change in this file
+''       		  # go to the position before the last jump
+:ju - \j 		  # list of jumps
+Ctrl + i 		  # go to newer position in jump list
+Ctrl + o 		  # go to older position in jump list
+:changes 		  # list of changes
+g,       		  # go to newer position in change list
+g;       		  # go to older position in change list
+Ctrl + ] 		  # jump to the tag under cursor
+
+# SURROUNDINGS
+cs			  # change surroundings
+ds			  # delete surroundings
+ys			  # insert surroundings
+
+# FORWARD SEARCH LATEX
+\lav			  # latex -> pdf view
+
+# MULTISELECT PLUGIN
+MAP		MODE		ACTION
+<Leader> msa	n,v	    Add current selection to the selection list.
+<Leader> msd	n	    Delete current selection.
+<Leader> msc	n,v	    Clear selections in the given range or the entire buffer.
+<Leader> msi	n,v	    Invert the entire or selected selection.
+<Leader> ms]	n	    Take cursor to the next selection.
+<Leader> ms[	n	    Take cursor to the previous selection.
+<Leader> msm	n,v	    Add matched lines to the selection.
+<Leader> msv	n,v	    Add unmatched lines to the selection.

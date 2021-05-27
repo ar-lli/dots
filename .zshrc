@@ -2,6 +2,8 @@
 autoload -Uz compinit && compinit
 # completion menu
 zstyle ':completion:*' menu select
+# case insensitive path-completion 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # partial completion suggestions
 zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
 #
@@ -12,6 +14,11 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suff
 # zle -N down-line-or-beginning-search
 # [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 # [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+#
+# History search
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
 #
 #
 ## Aliases
@@ -71,8 +78,8 @@ bindkey '^[[2~' overwrite-mode                                  # Insert key
 bindkey '^[[3~' delete-char                                     # Delete key
 bindkey '^[[C' forward-char                                    # Right key
 bindkey '^[[D' backward-char                                   # Left key
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+bindkey '^[[A' history-beginning-search-backward-end
+bindkey '^[[B' history-beginning-search-forward-end
 ##
 ## Navigate words with ctrl+arrow keys
 bindkey '^[Oc' forward-word                                     #

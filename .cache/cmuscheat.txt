@@ -1,0 +1,17 @@
+STEP 4: MANAGING THE QUEUE
+
+Go to the song you want to hear next and press e.
+
+Press 4 to view/edit the queue.  
+You can change the order of the tracks with the p and P keys.  
+You can press shift-D to remove a track from the queue.
+
+STEP 5: THE PLAYLIST
+
+The playlist is on view 3.  
+Press 2 to go to the simple library view, go to a track you want and press y to add it to the playlist.
+Just like the queue, you can use the p, P and D keys to move and delete tracks from the playlist.
+
+Note: Changing the view (e.g. by pressing 3) does not affect what cmus will play next. To put cmus into "play from the playlist" mode, press Enter on one of the tracks in the playlist. To switch modes without interrupting the currently-playing song, you can press shift-M. 
+
+https://linux.die.net/man/7/cmus-tutorial

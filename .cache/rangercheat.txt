@@ -1,0 +1,13 @@
+
+r	    # open file with
+z	    # toggle settings
+zh	    # view hidden files
+cw	    # rename current file/dir
+
+Ctrl + n    # create new tab
+Ctrl + w    # close current tab
+tab	    # next tab
+
+space	    # to mark a file/dir
+v	    # to mark all files/dir
+uv	    # to unmark all selected files/dir
