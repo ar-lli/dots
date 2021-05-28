@@ -26,6 +26,8 @@ zle -N history-beginning-search-forward-end history-search-end
 alias ls='ls --color=always -1 --group-directories-first' 
 alias l='ls'
 alias la='ls -a'
+alias ll='ls -lh'
+alias lsd='ls -d */'
 alias ..='cd ..'
 alias bc='/usr/bin/bc -q'
 alias vim='vim --servername vim'
@@ -42,6 +44,8 @@ alias latexmk='f() { latexmk -pvc "$1" && latexmk -c "$1" };f'
 alias unimkdir='f() { mkdir "$1" && cd "$1" && mkdir riassunti && mkdir dispense && mkdir eserciziari && cd .. };f'
 alias stopwatch='date1=`date +%s`; while true; do echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; sleep 60; done'
 alias ssh_poisson='ssh carelli@poisson.phc.dm.unipi.it'
+alias ga='git add'
+alias gp='git push origin main'
 # Configuring $PATH
 path=("/usr/local/texlive/2020/bin/x86_64-linux" "$path[@]")
 export PATH

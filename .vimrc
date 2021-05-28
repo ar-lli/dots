@@ -11,7 +11,7 @@ set smartcase	   " Enable smart-case search
 set noignorecase   " Always case-sensitive
 set incsearch	   " Searches for strings incrementally
 "
-set nosplitbelow   "Open new split panes above
+set nosplitbelow   " Open new split panes above
 set splitright	   " Open new split panes right
 
 " ▲ ENABLE FILETYPE, INDENT, AND DETECTION
@@ -24,16 +24,9 @@ set foldmethod=manual
 autocmd BufWinLeave ?* mkview                  " automatic folding
 autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
 
-" ▲ LIGHTLINE SETTINGS
-set laststatus=2  " show bar
-set noshowmode	" not show current mode
-let g:lightline = {
-  \ 'colorscheme': 'nord',
-  \ }
-
 " ▲ ADVANCED
 set ruler	                " Show row and column ruler information
-                                 
+set wildmenu
 set undolevels=1000	        " Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 set timeout ttimeout
@@ -57,14 +50,17 @@ noremap <C-v> "+p
 " That not allow to delete text to be pasted
 noremap <Leader>p "0p 
 " Copy entire line without newline character
-noremap Y ^y$
+noremap Y ^yg_
 " Delete entire line without newline character
-noremap D ^d$
+noremap D ^dg_
 
 " ■ MOVEMENT
 " Remap k and j as jumps
-nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'gk'
-nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'gj'
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
+" Remap H and L to go to beginning and end of line
+nnoremap H 0
+nnoremap L $
 " Moving down and up by screen lines
 noremap <Up> gk
 noremap <Down> gj
@@ -86,16 +82,18 @@ inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
 
-" ■ REMAP <C-i> TO <C-j>
-noremap <C-j> <C-i>
+" ■ REMAP <C-i> TO <C-p>
+noremap <C-j> <C-p>
 
 " ■ REMAP <ESC> KEY IN INSERT MODE
 inoremap jk <ESC>
 
 " ■ MAP UNJOIN LINE
-noremap <M-j> i <CR> <ESC> d0 k_
+noremap <C-j> i<CR><ESC>d0k_
 
 " ■ MAP USEFUL COMMANDS
+" Map :source .vimrc file command
+nnoremap <Leader>so :source $MYVIMRC<CR>
 " Map :buffers command
 nnoremap <Leader>b :buffers<CR>
 " Map :ju[mps] command
@@ -124,7 +122,26 @@ nnoremap <Leader>w- :resize -5<CR>
 nnoremap <Leader>w> :vertical resize +10<CR>
 " Map windows related keys
 nnoremap <Leader>w< :vertical resize -10<CR>
-"
+
+" ■ SURROUND MAPPING
+" Map <Leader>( in normal mode to surround word-under-cursor with ()
+nnoremap <Leader>( viw<esc>Bi(<esc>Ea)<esc>
+" Map <Leader>( in visual mode to surround selection with ()
+vnoremap <Leader>( <esc>a)<esc>`<i(<esc>f)
+" Map <Leader>{ in normal mode to surround word-under-cursor with {}
+nnoremap <Leader>{ viw<esc>Bi{<esc>Ea}<esc>
+" Map <Leader>{ in visual mode to surround selection with {} 
+vnoremap <Leader>{ <esc>a}<esc>`<i{<esc>f}
+" Map <Leader>[ in normal mode to surround word-under-cursor with []
+nnoremap <Leader>[ viw<esc>Bi[<esc>Ea]<esc>
+" Map <Leader>[ in visual mode to surround selection with []
+vnoremap <Leader>[ <esc>a]<esc>`<i[<esc>f]
+" Map <Leader>" in normal mode to surround word-under-cursor with " 
+nnoremap <Leader>" viw<esc>a"<esc>bi"<esc>E
+" Map <Leader>" in visual mode to surround selection with " 
+vnoremap <Leader>" <esc>a"<esc>`<i"<esc>f"
+
+""
 
 " ▲ PLUGIN
 " ▲ VIM-PLUG & SIMILAR
@@ -140,21 +157,33 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-"LIGHTLINE plugin
+" ■ LIGHTLINE plugin
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
     \ 'colorscheme': 'nord',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename' ] ],
-    \	'right': [ [ 'lineinfo' ],
-    \              [ 'percent' ],
-    \              [ 'fileencoding', 'filetype', 'cutfromright' ] ]
+    \             [ 'readonly', 'absolutepath' ] ],
+    \	'right': [ [ 'percent', 'lineinfo' ],
+    \              [ 'filetype', 'cutfromright' ] ]
     \ },
     \ 'component': {
-    \	'cutfromright': '%<'
+    \	'absolutepath' : '%.20F',
+    \	'cutfromright': '%<',
+    \	'lineinfo' : '%l:%L'
+    \ },
+    \ 'inactive': {
+    \	'left': [ [ 'filename' ] ],
+    \	'right': [ ['lineinfo' ] ]
+    \ },
+    \ 'tabline': {
+    \	 'left': [ [ 'tabs' ] ],
+    \	 'right': [ [ 'close' ] ] 
     \ },
     \ }
+" Settings
+set laststatus=2  " show bar
+set noshowmode	" not show current mode
 
 " ■ COMMENTARY.VIM plugin
 Plug 'tpope/vim-commentary'
