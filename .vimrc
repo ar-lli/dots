@@ -1,4 +1,4 @@
-" ▲ GENERAL
+" ▲ GENERAL {{{
 set mouse=a
 set number
 set relativenumber " Show rel. number
@@ -13,18 +13,26 @@ set incsearch	   " Searches for strings incrementally
 "
 set nosplitbelow   " Open new split panes above
 set splitright	   " Open new split panes right
+" }}} 
 
-" ▲ ENABLE FILETYPE, INDENT, AND DETECTION
+" ▲ ENABLE FILETYPE, INDENT, AND DETECTION {{{
 filetype plugin indent on
 " Set LaTeX as first choice when *.tex file is detected
 let g:tex_flavor = "latex"
+" }}}
 
-" ▲ FOLDING
+" ▲ FOLDING {{{
 set foldmethod=manual
+" set foldmethod=marker for vim files
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 autocmd BufWinLeave ?* mkview                  " automatic folding
 autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
+" }}}
 
-" ▲ ADVANCED
+" ▲ ADVANCED {{{
 set ruler	                " Show row and column ruler information
 set wildmenu
 set undolevels=1000	        " Number of undo levels
@@ -33,16 +41,19 @@ set timeout ttimeout
 set ttimeoutlen=10              " Adjust delay between passing from normal to insert mode
 set timeoutlen=1000		" Adjust mappings delay
 set showcmd			" Show leader key in the bottom right corner for the duration of the timeout
+" }}}
 
-" ▲ MAPS
+" ▲ MAPS {{{
 " 
-"■ DEFINE <LEADER> KEY
+" ■ DEFINE <LEADER> KEY {{{
 let mapleader = "\<tab>"	"map leader key to Tab
+" }}}
 
-" ■ VISUAL-BLOCK REMAP ON <CTRL-v>
+" ■ VISUAL-BLOCK REMAP ON <CTRL-v> {{{
 noremap <C-q> <C-v>
+" }}}
 
-" ■ COPY AND PASTE
+" ■ COPY AND PASTE {{{
 " Copy and Paste using global clipboard
 noremap <C-c> "+y
 noremap <C-v> "+p
@@ -53,8 +64,9 @@ noremap <Leader>p "0p
 noremap Y ^yg_
 " Delete entire line without newline character
 noremap D ^dg_
+" }}}
 
-" ■ MOVEMENT
+" ■ MOVEMENT {{{
 " Remap k and j as jumps
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
@@ -81,17 +93,21 @@ inoremap <M-Down> <Esc>:m .+1<CR>==gi
 inoremap <M-Up> <Esc>:m .-2<CR>==gi
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Up> :m '<-2<CR>gv=gv
+" }}}
 
-" ■ REMAP <C-i> TO <C-p>
+" ■ REMAP <C-i> TO <C-p> {{{
 noremap <C-j> <C-p>
+" }}}
 
-" ■ REMAP <ESC> KEY IN INSERT MODE
+" ■ REMAP <ESC> KEY IN INSERT MODE {{{
 inoremap jk <ESC>
+" }}}
 
-" ■ MAP UNJOIN LINE
+" ■ MAP UNJOIN LINE {{{
 noremap <C-j> i<CR><ESC>d0k_
+" }}}
 
-" ■ MAP USEFUL COMMANDS
+" ■ MAP USEFUL COMMANDS {{{
 " Map :source .vimrc file command
 nnoremap <Leader>so :source $MYVIMRC<CR>
 " Map :buffers command
@@ -110,8 +126,9 @@ nnoremap <Leader>t :silent! ter<CR>
 nnoremap <Leader>u :update<CR>
 " Map :w !sudo tee % command
 nnoremap :w!! :w !sudo tee %<CR>
+" }}}
 
-" ■ MAP WINDOWS
+" ■ MAP WINDOWS {{{
 " Map windows related keys
 nnoremap <Leader>w <C-W>
 " Map windows related keys
@@ -122,8 +139,9 @@ nnoremap <Leader>w- :resize -5<CR>
 nnoremap <Leader>w> :vertical resize +10<CR>
 " Map windows related keys
 nnoremap <Leader>w< :vertical resize -10<CR>
+" }}}
 
-" ■ SURROUND MAPPING
+" ■ SURROUND MAPPING {{{
 " Map <Leader>( in normal mode to surround word-under-cursor with ()
 nnoremap <Leader>( viw<esc>Bi(<esc>Ea)<esc>
 " Map <Leader>( in visual mode to surround selection with ()
@@ -140,24 +158,26 @@ vnoremap <Leader>[ <esc>a]<esc>`<i[<esc>f]
 nnoremap <Leader>" viw<esc>a"<esc>bi"<esc>E
 " Map <Leader>" in visual mode to surround selection with " 
 vnoremap <Leader>" <esc>a"<esc>`<i"<esc>f"
+" }}}
 
-""
+" }}}
 
-" ▲ PLUGIN
+" ▲ PLUGIN {{{
 " ▲ VIM-PLUG & SIMILAR
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
  call plug#begin('~/.vim/plugged')
 
-" ■ ULTISNIPS plugin 
+" ■ ULTISNIPS plugin {{{
 " All edits are taken from https://castel.dev/post/lecture-notes-1/
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" }}}
 
-" ■ LIGHTLINE plugin
+" ■ LIGHTLINE plugin {{{
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
     \ 'colorscheme': 'nord',
@@ -174,32 +194,40 @@ let g:lightline = {
     \ },
     \ 'inactive': {
     \	'left': [ [ 'filename' ] ],
-    \	'right': [ ['lineinfo' ] ]
+    \	'right': [ ['filetype', 'lineinfo' ] ]
     \ },
     \ 'tabline': {
     \	 'left': [ [ 'tabs' ] ],
     \	 'right': [ [ 'close' ] ] 
     \ },
     \ }
+"
 " Settings
 set laststatus=2  " show bar
 set noshowmode	" not show current mode
+"
+" }}}
 
-" ■ COMMENTARY.VIM plugin
+" ■ COMMENTARY.VIM plugin {{{
 Plug 'tpope/vim-commentary'
 autocmd FileType octave setlocal commentstring=#\ %s
+" }}}
 
-" ■ VIM MULTIPLE CURSOR plugin
+" ■ VIM MULTIPLE CURSOR plugin {{{
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" }}}
 
- call plug#end()
-
-" ▲ OCTAVE SYNTAX
+call plug#end()
+"
+" }}}
+ 
+" ▲ OCTAVE SYNTAX {{{
 augroup filetypedetect
 au! BufRead,BufNewFile *.m,*.oct set filetype=octave
 augroup END
+" }}}
 
-" ▲ SET FORWARD LATEX SEARCH
+" ▲ SET FORWARD LATEX SEARCH {{{
 function! SyncTexForward()
 let linenumber=line(".")
 let colnumber=col(".")
@@ -210,11 +238,14 @@ exec execstr
 endfunction
 nmap :call SyncTexForward()
 nnoremap <Leader>lav :call SyncTexForward()<CR>
+" }}}
 
-" ▲ COLORSCHEME
+" ▲ COLORSCHEME {{{
 " nord
 colorscheme nord
+" }}}
 
-" ▲ MACRO
+" ▲ MACRO {{{
 " Macro che automatizza l'editing del file della musica
 let @m = '$F-dt.j'
+" }}}
