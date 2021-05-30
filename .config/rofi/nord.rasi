@@ -10,7 +10,8 @@
     // Black
     black:       #2e3440;
     lightblack:  #3b4252;
-    tlightblack:  #2e3440f2;
+    tlightblack:  #4c566a66;
+    /* tlightblack:  #2e3440f2; */
     //
     // Red
     red:         #bf616a;
@@ -30,7 +31,7 @@
     //
     // Magenta
     magenta:      #b48ead;
-    lightmagenta:     #deb887;
+    lightmagenta:     #b48ead;
     //
     // Cyan
     cyan:      #88c0d0;
@@ -45,7 +46,7 @@
     highlight:     underline bold #ffffff;
 
     transparent: rgba(0,0,0,0);
-    font: "Source Code Pro 9";
+    font: "Hasklug Nerd Font 10";
 }
 #window {
     location: center;
@@ -67,13 +68,13 @@
 }
 
 #inputbar {
-    color: @lightgreen;
-    padding: 8px;
+    color: @white;
+    padding: 5px;
     background-color: @black;
-    border: 2px 2px 2px 2px;
+    border: 2px 2px 0px 2px;
     /* border-radius:  10px 10px 0px 0px; */
     border-radius:  0px 0px 0px 0px;
-    border-color: @yellow;
+    border-color: @blue;
     font: "Source Code Pro 10";
 }
 #entry,prompt,case-indicator {
@@ -87,9 +88,9 @@
     padding: 8px;
     /* border-radius: 0px 0px 10px 10px; */
     border-radius: 0px 0px 0px 0px;
-    border-color: @red;
+    border-color: @blue;
     border: 0px 2px 2px 2px;
-    background-color: @tlightblack;
+    background-color: @black;
     dynamic: false;
     lines: 10;
 }
@@ -97,13 +98,13 @@
     padding: 3px;
     vertical-align: 0.5;
 //    border: 2px;
-    border-radius: 4px;
+    border-radius: 0px;
     background-color: transparent;
     color: @foreground;
     font:inherit;
 }
-#element selected.normal {
-    background-color: @blue;
+#element selected normal {
+    background-color: @tlightblack;
 }
 #element normal active {
     foreground: @lightblue;
@@ -149,7 +150,7 @@
     font: "FontAwesome 22";
     padding: 6px;
     border: 2px 0px 2px 2px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 0px 0px 0px 4px;
     background-color: @tlightblack;
     border-color: @foreground;
     color: @foreground;
@@ -161,4 +162,3 @@
     background-color: @backlight;
     border-color: @foreground;
 }
-
