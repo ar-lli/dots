@@ -24,9 +24,10 @@ let g:tex_flavor = "latex"
 " ▲ FOLDING {{{
 set foldmethod=manual
 " set foldmethod=marker for vim files
-augroup filetype_vim
+augroup filetype_file
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType conf setlocal foldmethod=marker
 augroup END
 autocmd BufWinLeave ?* mkview                  " automatic folding
 autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
@@ -145,19 +146,19 @@ nnoremap <Leader>w< :vertical resize -10<CR>
 " Map <Leader>( in normal mode to surround word-under-cursor with ()
 nnoremap <Leader>( viw<esc>Bi(<esc>Ea)<esc>
 " Map <Leader>( in visual mode to surround selection with ()
-vnoremap <Leader>( <esc>a)<esc>`<i(<esc>f)
+vnoremap <Leader>( <esc>`>a)<esc>`<i(<esc>f)
 " Map <Leader>{ in normal mode to surround word-under-cursor with {}
 nnoremap <Leader>{ viw<esc>Bi{<esc>Ea}<esc>
 " Map <Leader>{ in visual mode to surround selection with {} 
-vnoremap <Leader>{ <esc>a}<esc>`<i{<esc>f}
+vnoremap <Leader>{ <esc>`>a}<esc>`<i{<esc>f}
 " Map <Leader>[ in normal mode to surround word-under-cursor with []
 nnoremap <Leader>[ viw<esc>Bi[<esc>Ea]<esc>
 " Map <Leader>[ in visual mode to surround selection with []
-vnoremap <Leader>[ <esc>a]<esc>`<i[<esc>f]
+vnoremap <Leader>[ <esc>`>a]<esc>`<i[<esc>f]
 " Map <Leader>" in normal mode to surround word-under-cursor with " 
 nnoremap <Leader>" viw<esc>a"<esc>bi"<esc>E
 " Map <Leader>" in visual mode to surround selection with " 
-vnoremap <Leader>" <esc>a"<esc>`<i"<esc>f"
+vnoremap <Leader>" <esc>`>a"<esc>`<i"<esc>f"
 " }}}
 
 " }}}
