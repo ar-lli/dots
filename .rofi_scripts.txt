@@ -1,0 +1,5 @@
+add_word
+clipboard
+genius_page
+unicode_cheatsheet
+vim_cheatsheet
