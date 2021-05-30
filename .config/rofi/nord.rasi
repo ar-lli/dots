@@ -53,7 +53,7 @@
     transparency: "screenshot";
     padding: 10px;
     border:  0px;
-    border-radius: 5px;
+    border-radius: 0px;
     color: @magenta;
     background-color: @transparent;
     spacing: 0;
@@ -71,7 +71,8 @@
     padding: 8px;
     background-color: @black;
     border: 2px 2px 2px 2px;
-    border-radius:  10px 10px 0px 0px;
+    /* border-radius:  10px 10px 0px 0px; */
+    border-radius:  0px 0px 0px 0px;
     border-color: @yellow;
     font: "Source Code Pro 10";
 }
@@ -84,7 +85,8 @@
 }
 #listview {
     padding: 8px;
-    border-radius: 0px 0px 10px 10px;
+    /* border-radius: 0px 0px 10px 10px; */
+    border-radius: 0px 0px 0px 0px;
     border-color: @red;
     border: 0px 2px 2px 2px;
     background-color: @tlightblack;

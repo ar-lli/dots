@@ -1,1 +1,1 @@
-rofi/rofi_start.sh
+rofi/start_scripts/rofi_start.sh

@@ -1,6 +1,6 @@
 configuration {
 	modi: "drun,file-browser-extended";
-	width: 50;
+	width: 25;
 	lines: 15;
 	columns: 1;
 	font: "mono 10";

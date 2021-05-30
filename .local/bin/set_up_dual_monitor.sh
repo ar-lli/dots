@@ -1,0 +1,1 @@
+brightness_screen/set_up_dual_monitor.sh

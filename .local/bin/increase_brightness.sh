@@ -1,0 +1,1 @@
+brightness_screen/increase_brightness.sh

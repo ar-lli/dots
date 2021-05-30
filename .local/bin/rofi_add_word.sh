@@ -1,1 +1,1 @@
-rofi/rofi_add_word.sh
+rofi/scripts/rofi_add_word.sh

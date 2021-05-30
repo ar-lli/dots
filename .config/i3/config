@@ -1,6 +1,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# ▲ MODIFIER
+# ▲ MODIFIER {{{
 
 # Default
 set $mod Mod4
@@ -9,7 +9,9 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Focus
+# }}}
+
+# ▲ Focus {{{
 
 # focus on mouse
 focus_follows_mouse no
@@ -18,7 +20,9 @@ focus_on_window_activation urgent
 no_focus [class="Zathura"]
 no_focus [class="Octave"]
 
-# ▲ BASICS
+# }}}
+
+# ▲ BASICS {{{
 
 # Change Focus, Orientation, Containers Styles, Etc..:
 # change focus
@@ -130,13 +134,16 @@ mode "$mode_system" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# ▲ EXEC USED APPLICATIONS
+# }}}
+
+# ▲ EXEC USED APPLICATIONS {{{
 
 bindsym $mod+Return exec termite
 bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Shift+Return exec --no-startup-id termite --role "floating_termite"
 bindsym $mod+q kill
 bindsym $mod+z exec /home/arianna/.local/bin/rofi_start.sh
+bindsym $mod+Ctrl+s exec /home/arianna/.local/bin/rofi_scripts.sh
 bindsym $mod+Shift+d exec --no-startup-id dmenu_recency
 bindsym $mod+F1 exec "termite -e ranger"
 bindsym $mod+Shift+F1 exec pcmanfm
@@ -145,8 +152,8 @@ bindsym $mod+Shift+F2 exec chromium
 bindsym $mod+F3 exec telegram-desktop
 bindsym $mod+F4 "workspace 4; exec termite -e cmus"
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+Ctrl+u exec "$HOME/.local/bin/script_unipicker"
-bindsym $mod+Ctrl+v exec "rofi-vim -rvim"
+# bindsym $mod+Ctrl+u exec "$HOME/.local/bin/script_unipicker"
+# bindsym $mod+Ctrl+v exec "rofi-vim -rvim"
 bindsym $mod+Ctrl+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 #bindsym $mod+ctrl+r exec "rofi-ranger -rranger"
 bindsym $mod+Ctrl+b exec blueman-manager
@@ -164,7 +171,9 @@ bindsym $mod+Ctrl+o exec "$HOME/.local/bin/show_timetable.sh"
 #bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 #bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# ▲ RESIZE WINDOW
+# }}}
+
+# ▲ RESIZE WINDOW {{{
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -206,12 +215,14 @@ for_window [class="firefox"] move left
 for_window [class="Blueman-manager"] resize set 640 480
 for_window [class="Blueman-manager"] move absolute position center
 
-# ▲ VOLUME, AUDIO CONTROLS, SCREENSHOOT, BRIGHTNESS
+# }}}
+
+# ▲ VOLUME, AUDIO CONTROLS, SCREENSHOOT, BRIGHTNESS {{{
 
 # volume controls
-bindsym XF86AudioRaiseVolume exec "volume_up"
-bindsym XF86AudioLowerVolume exec "volume_down"
-bindsym XF86AudioMute exec "volume_mute_toggle"
+bindsym XF86AudioRaiseVolume exec "volume_up.sh"
+bindsym XF86AudioLowerVolume exec "volume_down.sh"
+bindsym XF86AudioMute exec "volume_mute_toggle.sh"
 
 # audio controls
 # next player
@@ -230,9 +241,11 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
 # Brightness Controls
-bindsym $mod+ctrl+l exec "brightness_toggle"
+bindsym $mod+ctrl+l exec "brightness_toggle.sh"
 
-# ▲ AUTOSTART APPLICATIONS
+# }}}
+
+# ▲ AUTOSTART APPLICATIONS {{{
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id manjaro-hello
@@ -247,7 +260,7 @@ exec --no-startup-id "conky -c /home/arianna/.conky/conky_anne_lister"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_orario"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_to_do"
 # adjust screen brightness
-exec --no-startup-id /home/arianna/.local/bin/brightness_toggle2
+exec --no-startup-id /home/arianna/.local/bin/brightness_toggle
 # clear screenshots directory in ~
 #exec --no-startup-id /home/arianna/.local/bin/clear_screenshots
 
@@ -257,7 +270,9 @@ exec_always --no-startup-id fix_xcursor
 # launch polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# ▲ FLOATING MODE
+# }}}
+
+# ▲ FLOATING MODE {{{
 
 # Open specific applications in floating mode
 for_window [class="calamares"] floating enable border normal
@@ -293,7 +308,9 @@ for_window [class="(?i)termite" title="htop"] floating enable, resize set 800 60
 for_window [window_role="floating_termite"] floating enable, resize set 800 px 600 px, move to position center
 # for_window [title="Add"] floating enable, move position 1385 389, resize set 500 400
 
-# ▲ MULTIPLE MONITORS SETTINGS
+# }}}
+
+# ▲ MULTIPLE MONITORS SETTINGS {{{
 
 workspace 1 output eDP
 workspace 2 output eDP
@@ -303,9 +320,11 @@ workspace 5 output HDMI-A-0
 workspace 6 output HDMI-A-0
 
 #set up dual monitor settings
-exec --no-startup-id /home/arianna/.local/bin/set_up_dual_monitor
+exec --no-startup-id /home/arianna/.local/bin/set_up_dual_monitor.sh
 
-# ▲ VIM-MARKS
+# }}}
+
+# ▲ VIM-MARKS {{{
 
 # Mark Windows
 # read 1 character and mark the current window with this character
@@ -319,7 +338,9 @@ bindsym $mod+d exec i3-input -F 'unmark %s' -l 1 -P 'Remove: '
 
 show_marks yes
 
-# ▲ SCRATCHPAD
+# }}}
+
+# ▲ SCRATCHPAD {{{
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -327,7 +348,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# ▲ APPEARANCE & BAR
+# }}}
+
+# ▲ APPEARANCE & BAR {{{
 
 # Font
 font pango: RobotoMono Nerd Font Regular 10
@@ -426,3 +449,5 @@ gaps inner 8
 # Smart gaps (gaps used if only more than one container on the workspace)
 # smart_gaps inverse_outer
 # smart_gaps on
+
+# }}}
