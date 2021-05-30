@@ -1,2 +1,2 @@
 #!/bin/bash
-exec rofi-vim -rvim
+rofi-vim -rvim

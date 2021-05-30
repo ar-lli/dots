@@ -4,3 +4,4 @@ if [[ "$Command" != "" ]]
 then 
 	exec "rofi_$Command.sh"
 fi
+echo "rofi_$Command.sh"

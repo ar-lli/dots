@@ -1,5 +1,5 @@
 #!/bin/bash
-selected=$(cat "/home/arianna/.clipboard.txt" | rofi -dmenu -l 10)
+selected=$(cat "/home/arianna/.clipboard.txt" | rofi -dmenu -l 10 -p clipboard:)
 if [[ "$selected" != "" ]]
 then
 	if ! grep -q "$selected" "/home/arianna/.clipboard.txt"; 
