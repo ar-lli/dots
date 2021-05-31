@@ -1,18 +1,44 @@
 #!/bin/bash
-# ListCommand=$(find $HOME/.rofi_exe_scripts -type f -printf "%f\n" | sed 's/rofi_//g' | sed 's/.\{3\}$//' | rofi -no-show-match -dmenu -p "scripts")
-ListCommand=$(cat $HOME/.rofi_scripts.txt | rofi -no-show-match -dmenu -p "scripts")
-#
-Command=$(echo $ListCommand | sed 's/ .*//')
-# dash '-' è un carattere usato per far sì di non matchare comandi già presenti
-Flags=$(echo $ListCommand | sed "s/$Command //" | sed 's/-//')
-#
-if [[ "$Command" == "$Flags" ]]
-then
-	Flags=""
-fi
-#
-if [[ "$Command" != "" ]]
-then 
-	# exec "rofi_$Command.sh $Flags"
-	bash "rofi_$Command.sh" "$Flags"
-fi
+ListCommand=$(cat $HOME/.rofi_scripts.txt | rofi -dmenu -p "scripts")
+case $ListCommand in
+
+	add_word)
+		Command="rofi_$ListCommand.sh"
+		bash $Command
+		;;
+	clipboard)
+		Command="rofi_$ListCommand.sh"
+		bash $Command
+		;;
+
+	download_tidy*)
+		Command=$(echo $ListCommand | sed 's/ .*//')
+		Flags=$(echo $ListCommand | sed "s/$Command //")
+		regex='"(.+)" "(.+)"'
+		[[ $Flags =~ $regex ]]
+		folder="${BASH_REMATCH[1]}"
+		url="${BASH_REMATCH[2]}"
+		if [[ ${#BASH_REMATCH[@]} -eq 3 ]]
+		then
+			Command="rofi_$Command.sh"
+			bash $Command "$folder" "$url"
+		fi
+		;;
+
+	"genius_page l" | "genius_page -a")
+		Command=$(echo $ListCommand | sed 's/ .*//')
+		Flags=$(echo $ListCommand | sed "s/$Command //" | sed 's/-//')
+		Command="rofi_$ListCommand.sh"
+		bash "$Command" "$Flags"
+		;;
+
+	unicode_cheatsheet)
+		Command="rofi_$ListCommand.sh"
+		bash $Command
+		;;
+
+	vim_cheatsheet)
+		Command="rofi_$ListCommand.sh"
+		bash $Command
+		;;
+esac
