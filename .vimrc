@@ -1,5 +1,7 @@
 " ▲ GENERAL {{{
 set mouse=a
+" Serve ad alacritty per far funzionare il mouse correttamente
+set ttymouse=sgr
 set number
 set relativenumber " Show rel. number
 set wrap	   " Wrap lines
@@ -28,6 +30,7 @@ augroup filetype_file
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType conf setlocal foldmethod=marker
+    autocmd FileType zsh setlocal foldmethod=marker
 augroup END
 autocmd BufWinLeave ?* mkview                  " automatic folding
 autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
