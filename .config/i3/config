@@ -92,14 +92,14 @@ bindsym $mod+8 workspace 8
 #bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 #bindsym $mod+Shift+9 move container to workspace 9
 #bindsym $mod+Shift+0 move container to workspace 10
 
@@ -226,7 +226,7 @@ bindsym XF86AudioMute exec "volume_mute_toggle.sh"
 
 # audio controls
 # next player
-bindsym $mod+ctrl+p exec "playerctld shift; notify-send 'player changed'"
+# bindsym $mod+ctrl+p exec "playerctld shift; notify-send 'player changed'"
 # handle player status
 bindsym 0xff99 exec "playerctl --player playerctld play-pause"
 bindsym 0xff96 exec "playerctl --player playerctld previous"
@@ -257,10 +257,10 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 # exec --no-startup-id "conky -c /home/arianna/.conky/conky_maia"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_anne_lister"
-exec --no-startup-id "conky -c /home/arianna/.conky/conky_orario"
+# exec --no-startup-id "conky -c /home/arianna/.conky/conky_orario"
 exec --no-startup-id "conky -c /home/arianna/.conky/conky_to_do"
 # adjust screen brightness
-exec --no-startup-id /home/arianna/.local/bin/brightness_toggle
+exec --no-startup-id /home/arianna/.local/bin/brightness_toggle.sh
 # clear screenshots directory in ~
 #exec --no-startup-id /home/arianna/.local/bin/clear_screenshots
 
@@ -331,7 +331,8 @@ exec --no-startup-id /home/arianna/.local/bin/set_up_dual_monitor.sh
 bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 
 # read 1 character and go to the window with the character
-bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+# bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+n exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # remove mark
 bindsym $mod+d exec i3-input -F 'unmark %s' -l 1 -P 'Remove: '

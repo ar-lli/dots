@@ -1,4 +1,4 @@
-# Completion
+## Completion {{{
 autoload -Uz compinit && compinit
 # completion menu
 zstyle ':completion:*' menu select
@@ -6,9 +6,10 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # partial completion suggestions
 zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
-#
-#
-# History search
+
+# }}}
+
+## History search {{{
 # autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 # zle -N up-line-or-beginning-search
 # zle -N down-line-or-beginning-search
@@ -19,9 +20,10 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suff
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-#
-#
-## Aliases
+
+# }}}
+
+## Aliases {{{
 #
 alias ls='ls --color=always -1 --group-directories-first' 
 alias l='ls'
@@ -30,6 +32,7 @@ alias ll='ls -lh'
 alias lsd='ls -d */'
 alias ..='cd ..'
 alias bc='/usr/bin/bc -q'
+alias cal='cal -n 2 -m'
 alias vim='vim --servername vim'
 alias download='youtube-dl -x --audio-format mp3'
 alias title='mid3v2 -t'
@@ -49,14 +52,14 @@ alias gp='git push origin main'
 # Configuring $PATH
 path=("/usr/local/texlive/2020/bin/x86_64-linux" "$path[@]")
 export PATH
-manpath=("/usr/local/texlive/2020/texmf-dist/doc/man" "$manpath[@]")
+manpath=("/usr/local/texlive/2020/texmf-dist/doc/man:/usr/share/man" "$manpath[@]")
 export MANPATH
 infopath=("/usr/local/texlive/2020/texmf-dist/doc/info" "$infopath[@]")
 export INFOPATH
 #
-# END
+# }}}
 #
-## Themes
+## Themes {{{
 #
 autoload -Uz promptinit
 promptinit
@@ -70,9 +73,9 @@ LS_COLORS='rs=0:di=01;34:ln=01;35:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 zle_highlight=(default:bold)
 #
-# END
+# }}}
 #
-## Keybindings section
+## Keybindings section {{{
 #
 bindkey -e
 #
@@ -93,9 +96,9 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 # bindkey '^[[Z' undo                                             # Shift+tab undo last action
 #
-# END
+# }}}
 #
-## Plugins
+## Plugins {{{
 #
 # zsh-autosuggestions
 # autoload -Uz zpty
@@ -146,4 +149,4 @@ SAVEHIST=500
 # zsh-syntax-hightlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
-# END
+# }}}
