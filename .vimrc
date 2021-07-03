@@ -24,14 +24,14 @@ let g:tex_flavor = "latex"
 " }}} 
 
 " ▲ FOLDING {{{
-set foldmethod=manual
+set foldmethod=marker
 " set foldmethod=marker for vim files
-augroup filetype_file
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType conf setlocal foldmethod=marker
-    autocmd FileType zsh setlocal foldmethod=marker
-augroup END
+" augroup filetype_file
+"     autocmd!
+"     autocmd FileType vim setlocal foldmethod=marker
+"     autocmd FileType conf setlocal foldmethod=marker
+"     autocmd FileType zsh setlocal foldmethod=marker
+" augroup END
 autocmd BufWinLeave ?* mkview                  " automatic folding
 autocmd BufWinEnter ?* silent! loadview	       " automatic load folder
 " }}} 
@@ -47,12 +47,19 @@ set timeoutlen=1000		" Adjust mappings delay
 set showcmd			" Show leader key in the bottom right corner for the duration of the timeout
 "  }}}
 
-" ▲ NETRW {{{
+" ▲ NETRW {{{ 
+"
+" augroup InitNetrw
+" 	autocmd!
+" 	autocmd VimEnter * if expand("%") == "" | edit . | endif
+" augroup END
 "
 " ■ GENERAL {{{
+
 let g:netrw_keepdir = 0
 let g:netrw_winsize = 20
 let g:netrw_banner = 0
+let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localcopydircmd = 'cp -r'
 hi! link netrwMarkFile Search
@@ -61,6 +68,45 @@ hi! link netrwMarkFile Search
 " ■ NAVIGATION {{{
 "
 function! NetrwMapping()
+  nmap <buffer> h -^
+  nmap <buffer> l <CR>
+
+  nmap <buffer> . gh
+  " nmap <buffer> p " Open a preview window
+  nmap <buffer> P <C-w>z
+
+  nmap <buffer> V v<C-w>l<C-w>=<C-w>h
+  nmap <buffer> H o<C-w>L<C-w>J<C-w>k<C-w>H
+  nmap <buffer> T t
+
+  " create new file
+  nmap <buffer> ff %:w<CR>:buffer #<CR>
+  " rename a file
+  nmap <buffer> fe R 
+  " Will copy the marked files.  
+  nmap <buffer> fc mc
+  "  We will use this to skip a step. After you mark your files you can put the cursor in a directory and this will assign the target directory and copy in one step.
+  nmap <buffer> fC mtmc
+  " Will move marked files
+  nmap <buffer> fx mm
+  " Same thing as fC but for moving files
+  nmap <buffer> fX mtmm
+  " Will be running external commands on the marked files
+  nmap <buffer> f; mx
+
+  " To create a bookmark
+  nmap <buffer> bb mb
+  " To remove the most recent bookmark
+  nmap <buffer> bd mB
+  " To jump the most recent bookmark
+  nmap <buffer> bl gb
+
+  " Toggles the mark on a file or directory
+  nmap <buffer> <Space> mf
+  " Will unmark all the files in the current buffer
+  nmap <buffer> <S-Space> mF
+  " Will remove all the marks on all files
+  nmap <buffer> <Leader><Space> mu
 endfunction
 "
 augroup netrw_mapping
@@ -68,14 +114,6 @@ augroup netrw_mapping
   autocmd filetype netrw call NetrwMapping()
 augroup END
 "
-function! NetrwMapping()
-  nmap <buffer> H u
-  nmap <buffer> h -^
-  nmap <buffer> l <CR>
-
-  nmap <buffer> . gh
-  nmap <buffer> P <C-w>z
-endfunction
 "  }}}
 "
 "  }}}
@@ -172,9 +210,15 @@ nnoremap <Leader>t :silent! ter<CR>
 nnoremap <Leader>u :update<CR>
 " Map :w !sudo tee % command
 nnoremap :w!! :w !sudo tee %<CR>
-" Map :w !sudo tee % command
-nnoremap <Leader>f :Lexplore<CR>
+" Map netrw
+" nnoremap <Leader>f :Lexplore<CR>
+" Map fern drawer toggle
+nnoremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR>
 " }}} 
+
+" ■ MAP WINDOWS AND TABS {{{
+nnoremap <Leader>ll g<Tab>
+" }}}
 
 " ■ SURROUND MAPPING {{{
 " Map <Leader>( in normal mode to surround word-under-cursor with ()
@@ -266,12 +310,57 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'kana/vim-submode', {'branch': 'master'}
 " }}}
 
+" ■ FERN plugin {{{
+Plug 'lambdalisue/fern.vim', {'branch': 'master'}
+" ■ FERN PLUGIN SETTINGS
+" Disable netrw.
+let g:loaded_netrw  = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
+
+" Custom settings and mappings.
+let g:fern#disable_default_mappings = 1
+"
+let g:fern#drawer_width = 30
+let g:fern#default_hidden = 0
+let g:fern#disable_drawer_smart_quit = 1
+
+function! FernInit() abort
+  nmap <buffer><nowait> l <Plug>(fern-action-open-or-expand)
+  nmap <buffer><nowait> h <Plug>(fern-action-leave)
+  nmap <buffer><nowait> <CR> <Plug>(fern-action-enter)
+
+  nmap <buffer> H <Plug>(fern-action-open:split)
+  nmap <buffer> V <Plug>(fern-action-open:vsplit)
+  nmap <buffer> T <Plug>(fern-action-open:tabedit)
+
+  nmap <buffer> D <Plug>(fern-action-remove)
+  nmap <buffer> M <Plug>(fern-action-move)
+  nmap <buffer> R <Plug>(fern-action-rename)
+  nmap <buffer> N <Plug>(fern-action-new-path)
+
+  nmap <buffer> r <Plug>(fern-action-reload)
+  nmap <buffer> h <Plug>(fern-action-hidden:toggle)
+  nmap <buffer> mm <Plug>(fern-action-mark:toggle)
+
+  nmap <buffer> S <Plug>(fern-action-open:select)
+endfunction
+
+augroup FernGroup
+  autocmd!
+  autocmd FileType fern call FernInit()
+augroup END
+
+" }}}
+
 call plug#end()
 "
 " }}}
-
-" ■ SUBMODE plugin settings {{{
 "
+" ▲ SUBMODE plugin settings {{{
+"
+" ■ Window mode {{{
 " A message will appear in the message line when you're in a submode
 " and stay there until the mode has existed.
 let g:submode_always_show_submode = 1
@@ -304,6 +393,7 @@ call submode#map('WindowsMode', 'n', '', '+', ':resize +5<CR>')
 call submode#map('WindowsMode', 'n', '', '-', ':resize -5<CR>')
 call submode#map('WindowsMode', 'n', '', '>', ':vertical resize +10<CR>')
 call submode#map('WindowsMode', 'n', '', '<', ':vertical resize -10<CR>')
+" }}}
 "
 " }}}
  
